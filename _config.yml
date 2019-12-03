@@ -1,8 +1,0 @@
-include:
-  - "_static/*"
-  - "_sources/*"
-  - "_*_.html"
-  - "_*_.*.html"
-  - "_*_.css"
-  - "_*_.*.css"
-  - "_*.js"
