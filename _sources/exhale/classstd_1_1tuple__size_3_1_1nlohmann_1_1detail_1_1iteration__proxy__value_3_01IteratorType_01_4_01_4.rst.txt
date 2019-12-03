@@ -1,0 +1,25 @@
+.. _exhale_class_classstd_1_1tuple__size_3_1_1nlohmann_1_1detail_1_1iteration__proxy__value_3_01IteratorType_01_4_01_4:
+
+Template Class tuple_size<::nlohmann::detail::iteration_proxy_value< IteratorType > >
+=====================================================================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public std::integral_constant< std::size_t, 2 >``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: std::tuple_size<::nlohmann::detail::iteration_proxy_value< IteratorType > >
+   :members:
+   :protected-members:
+   :undoc-members:

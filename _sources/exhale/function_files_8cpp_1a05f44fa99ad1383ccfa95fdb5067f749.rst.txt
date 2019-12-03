@@ -1,0 +1,13 @@
+.. _exhale_function_files_8cpp_1a05f44fa99ad1383ccfa95fdb5067f749:
+
+Function binWrite< unsigned_ints >
+==================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: binWrite< unsigned_ints >(std::ostream&, const unsigned_ints&)

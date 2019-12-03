@@ -1,0 +1,13 @@
+.. _exhale_function_DocumentParser_8h_1afb3c8edaf63a7d769d0fda3b4316327c:
+
+Function stemming_stopword(std::string&)
+========================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: stemming_stopword(std::string&)

@@ -1,0 +1,82 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.h:
+
+File TA.h
+=========
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/TA.h``)
+----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye 
+
+0.1 
+
+2019-12-02
+
+Copyright (c) 2019 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``FA.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_FA.h`)
+
+- ``algorithm``
+
+- ``deque``
+
+- ``iostream``
+
+- ``iterator``
+
+- ``map``
+
+- ``numeric``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.cpp`
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_TestAlgo.cpp`
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classTA`
+

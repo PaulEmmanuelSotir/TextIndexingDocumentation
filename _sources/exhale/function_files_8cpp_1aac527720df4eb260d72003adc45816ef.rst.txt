@@ -1,0 +1,13 @@
+.. _exhale_function_files_8cpp_1aac527720df4eb260d72003adc45816ef:
+
+Function binRead< std::string >
+===============================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: binRead< std::string >(std::istream&, std::string&)

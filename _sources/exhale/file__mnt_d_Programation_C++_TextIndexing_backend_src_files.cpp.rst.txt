@@ -1,0 +1,66 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp:
+
+File files.cpp
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/files.cpp``)
+---------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``files.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_files_8cpp_1aac527720df4eb260d72003adc45816ef`
+
+- :ref:`exhale_function_files_8cpp_1a3381d6c1cc438f699513994f5e327917`
+
+- :ref:`exhale_function_files_8cpp_1a5568d7e79d4d1f943630e17889183e1b`
+
+- :ref:`exhale_function_files_8cpp_1af446872e4dbf99f9d62c82de2b6c3a48`
+
+- :ref:`exhale_function_files_8cpp_1acbce83da2fb0b58378c7ed272dede281`
+
+- :ref:`exhale_function_files_8cpp_1a82f455e246422e5ab0aee7b24e553d3c`
+
+- :ref:`exhale_function_files_8cpp_1a16a203c679ee5ace6b7e0c35e6052f96`
+
+- :ref:`exhale_function_files_8cpp_1ad8362a63080201e13ec03a44f919bd79`
+
+- :ref:`exhale_function_files_8cpp_1a3fad514e5854364a05c2e6236f0d2954`
+
+- :ref:`exhale_function_files_8cpp_1a3dee4304028b8085b0043bbc096261c7`
+
+- :ref:`exhale_function_files_8cpp_1ac8a19d1f845ceb3943514d418f5bafd2`
+
+- :ref:`exhale_function_files_8cpp_1a05f44fa99ad1383ccfa95fdb5067f749`
+

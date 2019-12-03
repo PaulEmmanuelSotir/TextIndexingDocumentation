@@ -1,0 +1,169 @@
+
+.. _program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.cpp:
+
+Program Listing for File Tokenizer.cpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.cpp>` (``/mnt/d/Programation/C++/TextIndexing/backend/src/Tokenizer.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "Tokenizer.h"
+   
+   #include "utility.h"
+   
+   
+   Tokenizer::Tokenizer() {
+       initializeLUTs();
+   }
+   
+   void Tokenizer::initializeLUTs() {
+       for (char c = '0'; c <= '9'; c++)
+           isCharValidText[c] = true;
+       for (char c = 'a'; c <= 'z'; c++)
+           isCharValidText[c] = true;
+       for (char c = 'A'; c <= 'Z'; c++)
+           isCharValidText[c] = true;
+   
+       // for (char c : {"-", ":", "?", "!", "(", ")", "[", "]", "\"", "'", ":", " ", "\n", "\t"})
+       //  isCharValidToken[c] = true;
+   }
+   
+   inline bool starts_with(const std::string& fullstr, const std::string& substr)
+   {
+       return (fullstr.substr(0, substr.length()) == substr);
+   }
+   
+   bool Tokenizer::isNextTokenASeparator(std::istream& is, std::string& separator) {
+       // gets the length of the longest separator
+       unsigned int charnb = 0;
+       for (const std::string& sep : separators)
+           if (sep.length() > charnb) charnb = sep.length();
+   
+       // gets the next chars of the stream
+       std::string streamchars;
+       for (unsigned int i = 0; i < charnb; i++)
+       {
+           char c;
+           if (!is.get(c)) break;
+           streamchars.push_back(c);
+       }
+       charnb = streamchars.length();
+       while (charnb --> 0) is.unget();
+       //TODO: avoid using unget since it's not guaranteed to succeed
+   
+       // checks if the next chars of the stream start with a separator
+       for (const std::string& sep : separators)
+       {
+           if (starts_with(streamchars, sep))
+           {
+               separator = sep;
+               return true;
+           }
+       }
+       return false;
+   }
+   
+   Token_t Tokenizer::extractToken(std::istream & is)
+   {
+       if (!is || (is.peek() == EOF)) throw custom_exception::no_token;
+   
+       {
+           std::ostringstream tokenSs;
+   
+           char c; for (int cint; (cint = is.peek()) != EOF; tokenSs << c)
+           {
+               c = static_cast<char>(cint);
+   
+               std::string separator;
+               if (!isCharValidText[c] && isNextTokenASeparator(is, separator))
+               {
+                   is.ignore(separator.length());
+                   return Token_t(separator, Token_t::SEPARATOR);
+               }
+   
+               is.ignore(1);
+           }
+           auto tokenStr = tokenSs.str();
+   
+           // Add something to separate pure literal from numbers, or meaningful numbers
+           return Token_t( tokenStr, Token_t::LITERAL );
+       }
+   }
+   
+   
+   std::string PreprocessorTagsData::separateTagsData(std::istream& is)
+   {
+       std::string result;
+   
+       if (!is || status == status_t::eof) throw custom_exception::no_tagordata;
+   
+       do {
+   
+       if (status == status_t::tag)
+       {
+           std::string tag;
+           getline(is, tag, '>');
+           status = status_t::data;
+           return '<' + tag + '>';
+       }
+       else if (status == status_t::data)
+       {
+           for (;;)
+           {
+               std::string text;
+               getline(is, text, '<');
+               bool reachedEOF = is.eof();
+               result += text;
+   
+               int next = is.peek();
+               if (next != EOF && (isCharAlpha(static_cast<char>(next)) || static_cast<char>(next) == '/'))
+               {
+                   status = status_t::tag;
+                   break;
+               }
+   
+               if (!reachedEOF) result += '<';
+               if (next == EOF)
+               {
+                   status = status_t::eof;
+                   return result;
+               }
+           }
+       }
+   
+       } while (result.empty());
+   
+       return result;
+   }
+   
+   bool Tokenizer::extract(const string_view& data, string_view& result)
+   {
+       std::string::const_iterator pos = data.begin;
+       for (;;)
+       {
+           if (pos == data.end) return false; // no token
+           if (isCharValidText[*pos]) break;
+           if (isCharValidToken[*pos])
+           {
+               result.begin = pos;
+               result.end = pos + 1;
+               return true;
+           }
+   
+           ++pos;
+       }
+   
+       result.begin = pos;
+       for (;;)
+       {
+           ++pos;
+           if (pos == data.end) break;
+           if (!isCharValidText[*pos]) break;
+       }
+       result.end = pos;
+   
+       return true;
+   }

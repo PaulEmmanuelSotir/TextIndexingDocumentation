@@ -1,0 +1,16 @@
+.. _exhale_class_classnlohmann_1_1detail_1_1iter__impl:
+
+Template Class iter_impl
+========================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nlohmann::detail::iter_impl
+   :members:
+   :protected-members:
+   :undoc-members:

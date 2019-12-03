@@ -1,0 +1,16 @@
+.. _exhale_struct_structDate__t:
+
+Struct Date_t
+=============
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: Date_t
+   :members:
+   :protected-members:
+   :undoc-members:

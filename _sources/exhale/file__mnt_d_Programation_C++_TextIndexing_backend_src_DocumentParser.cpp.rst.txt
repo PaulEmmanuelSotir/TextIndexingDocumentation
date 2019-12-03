@@ -1,0 +1,68 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.cpp:
+
+File DocumentParser.cpp
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/DocumentParser.cpp``)
+------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``DocumentParser.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h`)
+
+- ``Stemmer.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_Stemmer.h`)
+
+- ``Stopwords.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_Stopwords.h`)
+
+- ``Tokenizer.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.h`)
+
+- ``iostream``
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_DocumentParser_8cpp_1a554541aa4e49600213c4708b55296f1a`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1a91ecc8a861803ee14c5d35dfd1ec9f87`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1ac356569a18a7b850bb93894c1b099487`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1a261c46f3ca5723ad65356d687a809861`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1a6e5a0362fbd545278f6d5f31da93acfd`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1ab23fb828fd19a73f8ee85effde2dc33f`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1aa59fcbc64ddcc29da8dc9b2dbefa577f`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1ae38ff4fb78bad946c8b695e1bbc4b594`
+
+- :ref:`exhale_function_DocumentParser_8cpp_1afb3c8edaf63a7d769d0fda3b4316327c`
+

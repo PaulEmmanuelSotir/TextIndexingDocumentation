@@ -1,0 +1,48 @@
+
+.. _program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.h:
+
+Program Listing for File DocumentExtractor.h
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.h>` (``/mnt/d/Programation/C++/TextIndexing/backend/src/DocumentExtractor.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <list>
+   #include <string>
+   
+   struct DocumentTree_t
+   {
+       DocumentTree_t* parent;
+       std::string name;
+       std::list<DocumentTree_t> tags;
+       std::string data;
+   
+       void simplify();
+       bool empty() const;
+       void clear();
+   
+       DocumentTree_t() = default;
+       DocumentTree_t(const DocumentTree_t&) = default;
+       DocumentTree_t & operator=(const DocumentTree_t&) = default;
+   };
+   
+   class DocumentExtractor
+   {
+   public:
+       void parseTagOrData(const std::string& tagordata);
+   
+       DocumentTree_t& getDocument();
+       void clearDocument();
+   
+   private:
+       DocumentTree_t tree;
+       DocumentTree_t* node = &tree;
+   
+       std::list<std::string> part;
+   };

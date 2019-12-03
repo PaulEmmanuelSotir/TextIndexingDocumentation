@@ -1,0 +1,92 @@
+
+.. _program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h:
+
+Program Listing for File DocumentParser.h
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h>` (``/mnt/d/Programation/C++/TextIndexing/backend/src/DocumentParser.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <vector>
+   #include <string>
+   #include <unordered_map>
+   #include <iostream>
+   #include <algorithm>
+   
+   #include "DocumentExtractor.h"
+   #include "Tokenizer.h"
+   #include "utility.h"
+   
+   typedef std::unordered_map<std::string, unsigned int> TFC_t;
+   
+   struct DocumentData_t
+   {
+       std::string DOCNO;
+       unsigned int DOCID = 0;
+       Date_t DATE;
+       // SECTION
+       unsigned int LENGTH = 0;
+       TFC_t HEADLINE;
+       // BYLINE
+       // DATELINE
+       TFC_t TEXT;
+       std::list<TFC_t> GRAPHICs;
+       // TYPE
+       TFC_t SUBJECT;
+       // CORRECTION-DATE
+       // CORRECTION
+   };
+   
+   struct DocumentJSON_t
+   {
+       Date_t date;
+       std::string title;
+       std::vector<std::string> contents;
+   };
+   
+   
+   bool stemming_stopword(std::string& word);
+    
+   void print_tags(const DocumentTree_t& tag, const std::string& indent);
+   
+   std::vector<string_view> extractTokens(const std::string& data);
+   
+   template<class callback_t>
+   void extractTokens(const std::string& data, callback_t callback)
+   {
+       Tokenizer tokenizer;
+       string_view range(data);
+   
+       for (;;)
+       {
+           string_view part;
+           if (!tokenizer.extract(range, part)) break;
+   
+           callback(part);
+           range.begin = part.end;
+       }
+   }
+   
+   void extractDocumentData(DocumentTree_t& document_tree, DocumentData_t& document);
+   
+   void extractDocumentJSON(DocumentTree_t& document_tree, DocumentJSON_t& documentJSON);
+   
+   template<class callback_t>
+   void consumeDocuments(DocumentTree_t& documents, callback_t callback)
+   {
+       for (auto it = documents.tags.begin(); it != documents.tags.end(); it = documents.tags.erase(it))
+       {
+           if ((*it).name == "DOC")
+           {
+               callback(*it);
+           }
+       }
+   }
+   
+   std::ostream& operator <<(std::ostream &os, const DocumentJSON_t& document);

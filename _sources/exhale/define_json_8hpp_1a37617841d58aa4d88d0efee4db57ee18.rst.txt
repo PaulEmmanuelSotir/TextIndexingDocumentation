@@ -1,0 +1,13 @@
+.. _exhale_define_json_8hpp_1a37617841d58aa4d88d0efee4db57ee18:
+
+Define JSON_HEDLEY_IS_CONSTANT
+==============================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: JSON_HEDLEY_IS_CONSTANT

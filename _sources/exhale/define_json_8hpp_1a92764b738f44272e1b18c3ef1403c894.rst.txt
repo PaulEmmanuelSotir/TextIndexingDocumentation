@@ -1,0 +1,13 @@
+.. _exhale_define_json_8hpp_1a92764b738f44272e1b18c3ef1403c894:
+
+Define JSON_HEDLEY_GNUC_HAS_BUILTIN
+===================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: JSON_HEDLEY_GNUC_HAS_BUILTIN

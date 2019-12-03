@@ -1,0 +1,209 @@
+
+.. _program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h:
+
+Program Listing for File utility.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h>` (``/mnt/d/Programation/C++/TextIndexing/backend/src/utility.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <map>
+   #include <list>
+   
+   #include <vector>
+   #include <string>
+   
+   enum class custom_exception
+   {
+       fs_access,
+       parsing_error,
+       no_tagordata,
+       no_token,
+   };
+   
+   extern const std::vector<std::string> names_months;
+   extern const std::vector<std::string> names_weekdays;
+   
+   struct Date_t
+   {
+       enum class month_t : unsigned char {unknown = 0, january, february, march, april, may, june, july, august, september, october, november, december};
+       enum class weekday_t : unsigned char {unknown = 0, monday, tuesday, wednesday, thursday, friday, saturday, sunday};
+   
+       unsigned short year = 0;
+       month_t month = month_t::unknown;
+       unsigned char day = 0;
+       weekday_t weekday = weekday_t::unknown;
+   
+       bool empty() const
+       {
+           return ((year | static_cast<unsigned char>(month) | day | static_cast<unsigned char>(weekday)) == 0);
+       }
+   
+       operator std::string() const;
+   };
+   
+   class string_view
+   {
+   public:
+       std::string::const_iterator begin;
+       std::string::const_iterator end;
+       
+       string_view() = default;
+   
+       string_view(const std::string& str)
+           : begin(str.cbegin()), end(str.cend())
+       {}
+       
+       string_view(std::string::const_iterator begin, std::string::const_iterator end)
+           : begin(begin), end(end)
+       {}
+   
+       inline std::string str() const
+       {
+           return std::string(begin, end);
+       }
+   
+       inline explicit operator std::string() const
+       {
+           return str();
+       }
+   };
+   
+   inline bool isCharAlpha(char c) {
+       return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+   }
+   
+   inline bool isCharNumeric(char c) {
+       return (c >= '0' && c <= '9');
+   }
+   
+   inline bool streq(const char* str1, const char* str2)
+   {
+       for (;;)
+       {
+           if (*str1 != *str2) return false;
+           if (*str1 == '\0') return true;
+           str1++; str2++;
+       }
+   }
+   
+   bool operator ==(const string_view& str_view, const char* text);
+   
+   string_view strstrip(const std::string& text);
+   
+   inline void toLowerCase(std::string& text)
+   {
+       for (unsigned int i = 0, len = text.length(); i < len; i++)
+       {
+           char c = text[i];
+           if (c >= 'A' && c <= 'Z')
+           {
+               text[i] = c - 'A' + 'a';
+           }
+       }
+   }
+   
+   inline void toUpperCase(std::string& text)
+   {
+       for (unsigned int i = 0, len = text.length(); i < len; i++)
+       {
+           char c = text[i];
+           if (c >= 'a' && c <= 'z')
+           {
+               text[i] = c - 'a' + 'A';
+           }
+       }
+   }
+   
+   bool tryParseInt(const string_view& chars, unsigned int& value);
+   
+   bool tryParseInt(const std::string& chars, unsigned int& value);
+   
+   bool tryParseDate(const std::vector<std::string>& words, Date_t& date);
+   
+   std::string stringJoin(const std::vector<std::string>& data, const std::string& sep);
+   std::string stringJoin(const std::list<std::string>& data, const char sep = ' ');
+   
+   template <typename Key, typename Value, typename MergedValue, class Aggregator>
+   std::map<Key,MergedValue> mapIntersect(const std::map<Key,Value>& lhs, const std::map<Key,Value>& rhs)
+   {
+       std::map<Key,MergedValue> result;
+       for (auto itl = lhs.begin(), itr = rhs.begin(), endl = lhs.end(), endr = rhs.end(); itl != endl && itr != endr; )
+       {
+           if (itl->first == itr->first)
+           {
+               result[itl->first] = Aggregator(itl->second, itr->second);
+               ++itl; ++itr;
+           }
+           else
+           {
+               if (itl->first < itr->first)
+                   ++itl;
+               else
+                   ++itr;
+           }
+       }
+       return result;
+   }
+   
+   template <typename Key, typename Value, typename MergedValue, class Aggregator_t>
+   std::map<Key, MergedValue> mapIntersection(const std::map<Key, Value>& lhs, const std::map<Key, Value>& rhs, Aggregator_t aggregator)
+   {
+       std::map<Key, MergedValue> result;
+       auto endl = lhs.cend();
+       auto endr = rhs.cend();
+       for (auto itl = lhs.cbegin(), itr = rhs.cbegin();;)
+       {
+           if (itl->first == itr->first)
+           {
+               result[itl->first] = aggregator(itl->second, itr->second);
+               if (++itl == endl || ++itr == endr) break;
+           }
+           else if (itl->first < itr->first)
+           {
+               if (++itl == endl) break;
+           }
+           else
+           {
+               if (++itr == endr) break;
+           }
+       }
+       return result;
+   }
+   
+   template <typename Key, typename Value, typename MergedValue, class Aggregator_t, class AggregatorUnique_t>
+   std::map<Key, MergedValue> mapUnion(const std::map<Key, Value>& lhs, const std::map<Key, Value>& rhs, Aggregator_t aggregator, AggregatorUnique_t aggregatorUnique)
+   {
+       std::map<Key, MergedValue> result;
+       auto itl = lhs.cbegin(), endl = lhs.cend();
+       auto itr = rhs.cbegin(), endr = rhs.cend();
+       for (;;)
+       {
+           if (itl->first == itr->first)
+           {
+               result[itl->first] = aggregator(itl->second, itr->second);
+               ++itl;
+               ++itr;
+               if (itl == endl || itr == endr) break;
+           }
+           else if (itl->first < itr->first)
+           {
+               result[itl->first] = aggregatorUnique(itl->second);
+               if (++itl == endl) break;
+           }
+           else if (itr->first < itl->first)
+           {
+               result[itr->first] = aggregatorUnique(itr->second);
+               if (++itr == endr) break;
+           }
+       }
+       for (; itl != endl; ++itl) result[itl->first] = aggregatorUnique(itl->second);
+       for (; itr != endr; ++itr) result[itr->first] = aggregatorUnique(itr->second);
+       return result;
+   }

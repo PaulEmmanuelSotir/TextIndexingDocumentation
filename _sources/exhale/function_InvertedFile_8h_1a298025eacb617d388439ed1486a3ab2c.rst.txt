@@ -1,0 +1,13 @@
+.. _exhale_function_InvertedFile_8h_1a298025eacb617d388439ed1486a3ab2c:
+
+Function IFExport(const InvertedFile_t&, const std::string&)
+============================================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: IFExport(const InvertedFile_t&, const std::string&)

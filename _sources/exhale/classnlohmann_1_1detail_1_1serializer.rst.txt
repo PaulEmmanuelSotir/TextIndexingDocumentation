@@ -1,0 +1,16 @@
+.. _exhale_class_classnlohmann_1_1detail_1_1serializer:
+
+Template Class serializer
+=========================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nlohmann::detail::serializer
+   :members:
+   :protected-members:
+   :undoc-members:

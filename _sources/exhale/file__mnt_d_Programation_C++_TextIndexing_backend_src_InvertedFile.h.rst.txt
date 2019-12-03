@@ -1,0 +1,110 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.h:
+
+File InvertedFile.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/InvertedFile.h``)
+--------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye 
+
+0.1 
+
+2019-12-02
+
+Copyright (c) 2019 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``DocumentParser.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h`)
+
+- ``files.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h`)
+
+- ``map``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.cpp`
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_search.h`
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structDocFreq__t`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_InvertedFile_8h_1a5b6dac61ea81c9074d9529feff7fb087`
+
+- :ref:`exhale_function_InvertedFile_8h_1aa68452e2dd6e3b4adce519d2a9c1b41c`
+
+- :ref:`exhale_function_InvertedFile_8h_1a298025eacb617d388439ed1486a3ab2c`
+
+- :ref:`exhale_function_InvertedFile_8h_1a2f6a036ae066f18b01817d62d7e1293d`
+
+- :ref:`exhale_function_InvertedFile_8h_1a633acddcb39d9d7edd26c6f66872dd3e`
+
+- :ref:`exhale_function_InvertedFile_8h_1a1e8cb24b8d864b56f735e66984983359`
+
+- :ref:`exhale_function_InvertedFile_8h_1aaf1f2292a2ac210fc9542db497c5f40d`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_InvertedFile_8h_1ad8081812e8ee7bf06d260c39b67eb9c9`
+
+- :ref:`exhale_typedef_InvertedFile_8h_1a664849395bfa939660604a021a7313b9`
+
+- :ref:`exhale_typedef_InvertedFile_8h_1a04dffdcd99f413291b92ebf1ab83f7ac`
+
+- :ref:`exhale_typedef_InvertedFile_8h_1a91944572384554d92e9b2a10093586f1`
+
+- :ref:`exhale_typedef_InvertedFile_8h_1abd65c17cee1c3425726d2d847711dbe3`
+
+- :ref:`exhale_typedef_InvertedFile_8h_1a2ac073f5b8e759f5d2768b512fcc431c`
+

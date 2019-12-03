@@ -1,0 +1,18 @@
+
+Class Hierarchy
+---------------
+
+
+.. raw:: html
+
+   <ul class="treeView" id="class-treeView">
+     <li>
+       <ul class="collapsibleList">
+         <li>Namespace <a href="namespace_Document.html#namespace-Document">Document</a><ul><li class="lastChild">Enum <a href="enum_lexique_8h_1af87c08e594edbc64074263477826a502.html#exhale-enum-lexique-8h-1af87c08e594edbc64074263477826a502">TagLex</a></li></ul></li><li>Struct <a href="structarguments__t.html#exhale-struct-structarguments-t">arguments_t</a></li><li>Struct <a href="structDate__t.html#exhale-struct-structDate-t">Date_t</a></li><li>Struct <a href="structDocFreq__t.html#exhale-struct-structDocFreq-t">DocFreq_t</a></li><li>Struct <a href="structDocumentData__t.html#exhale-struct-structDocumentData-t">DocumentData_t</a></li><li>Struct <a href="structDocumentJSON__t.html#exhale-struct-structDocumentJSON-t">DocumentJSON_t</a></li><li>Struct <a href="structDocumentTree__t.html#exhale-struct-structDocumentTree-t">DocumentTree_t</a></li><li>Struct <a href="structTF.html#exhale-struct-structTF">TF</a></li><li>Struct <a href="structToken__t.html#exhale-struct-structToken-t">Token_t</a></li><li>Struct <a href="structTS.html#exhale-struct-structTS">TS</a></li><li>Struct <a href="structunsigned__ints.html#exhale-struct-structunsigned-ints">unsigned_ints</a></li><li>Class <a href="classDocumentExtractor.html#exhale-class-classDocumentExtractor">DocumentExtractor</a></li><li>Class <a href="classFA.html#exhale-class-classFA">FA</a></li><li>Class <a href="classPreprocessorTagsData.html#exhale-class-classPreprocessorTagsData">PreprocessorTagsData</a></li><li>Class <a href="classStemmer.html#exhale-class-classStemmer">Stemmer</a></li><li>Class <a href="classstring__view.html#exhale-class-classstring-view">string_view</a></li><li>Class <a href="classTA.html#exhale-class-classTA">TA</a></li><li>Class <a href="classTokenizer.html#exhale-class-classTokenizer">Tokenizer</a></li><li class="lastChild">Enum <a href="enum_utility_8h_1ad9261c86f6466d64cbda77711a82e4c8.html#exhale-enum-utility-8h-1ad9261c86f6466d64cbda77711a82e4c8">custom_exception</a></li>
+       </ul>
+     </li><!-- only tree view element -->
+   </ul><!-- /treeView class-treeView -->
+
+.. end raw html for treeView
+
+

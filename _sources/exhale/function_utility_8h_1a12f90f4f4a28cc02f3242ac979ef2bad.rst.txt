@@ -1,0 +1,13 @@
+.. _exhale_function_utility_8h_1a12f90f4f4a28cc02f3242ac979ef2bad:
+
+Function streq
+==============
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: streq(const char *, const char *)

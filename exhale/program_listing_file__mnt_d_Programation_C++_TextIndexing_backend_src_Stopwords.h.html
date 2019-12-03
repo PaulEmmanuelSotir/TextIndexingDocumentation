@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File Stopwords.h &mdash; OT1 - Text Indexing  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OT1 - Text Indexing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Doxygen C++ Backend Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_root.html">C++ Backend</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OT1 - Text Indexing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File Stopwords.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exhale/program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_Stopwords.h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-stopwords-h">
+<span id="program-listing-file-mnt-d-programation-c-textindexing-backend-src-stopwords-h"></span><h1>Program Listing for File Stopwords.h<a class="headerlink" href="#program-listing-for-file-stopwords-h" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_Stopwords.h.html#file-mnt-d-programation-c-textindexing-backend-src-stopwords-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/src/Stopwords.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma once</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;set&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="c1">// Source : https://gist.github.com/sebleier/554280</span>
+
+<span class="k">static</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">stopwords</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;i&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;me&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;my&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;myself&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;we&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;our&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;ours&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;ourselves&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;you&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;your&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;yours&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;yourself&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;yourselves&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;he&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;him&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;his&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;himself&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;she&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;her&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;hers&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;herself&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;it&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;its&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;itself&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;they&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;them&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;their&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;theirs&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;themselves&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;what&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;which&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;who&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;whom&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;this&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;that&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;these&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;those&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;am&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;is&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;are&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;was&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;were&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;be&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;been&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;being&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;have&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;has&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;had&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;having&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;do&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;does&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;did&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;doing&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;a&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;an&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;the&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;and&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;but&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;if&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;or&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;because&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;as&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;until&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;while&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;of&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;at&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;by&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;for&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;with&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;about&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;against&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;between&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;into&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;through&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;during&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;before&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;after&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;above&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;below&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;to&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;from&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;up&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;down&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;in&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;out&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;on&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;off&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;over&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;under&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;again&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;further&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;then&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;once&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;here&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;there&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;when&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;where&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;why&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;how&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;all&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;any&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;both&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;each&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;few&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;more&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;most&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;other&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;some&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;such&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;no&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;nor&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;not&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;only&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;own&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;same&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;so&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;than&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;too&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;very&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;s&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;t&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;can&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;will&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;just&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;don&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;should&quot;</span><span class="n">s</span><span class="p">,</span>
+    <span class="s">&quot;now&quot;</span><span class="n">s</span>
+<span class="p">};</span>
+
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="nf">isStopword</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">word</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">stopwords</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">!=</span> <span class="n">stopwords</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

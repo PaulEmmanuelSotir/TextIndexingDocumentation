@@ -1,0 +1,44 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.cpp:
+
+File TA.cpp
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/TA.cpp``)
+------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``TA.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_TA_8cpp_1aaf726c19815e8b82d5fc960b9d1d7d5b`
+

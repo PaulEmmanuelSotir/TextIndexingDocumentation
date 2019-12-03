@@ -1,0 +1,13 @@
+.. _exhale_function_utility_8cpp_1a0cc71410d3592acf1c1d8de7179761d3:
+
+Function tryParseInt(const std::string&, unsigned int&)
+=======================================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: tryParseInt(const std::string&, unsigned int&)

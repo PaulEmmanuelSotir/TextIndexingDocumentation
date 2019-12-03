@@ -1,0 +1,13 @@
+.. _exhale_function_files_8h_1a218fc6356432151b1f2769fea17b23f3:
+
+Template Function binWrite_vec
+==============================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: binWrite_vec(std::ostream&, const std::vector<std::pair<T1, T2>>&)

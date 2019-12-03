@@ -1,0 +1,13 @@
+.. _exhale_function_utility_8h_1acbf663fd087ead2f3ca6b597f1213f6a:
+
+Function toUpperCase
+====================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: toUpperCase(std::string&)

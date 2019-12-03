@@ -1,0 +1,16 @@
+.. _exhale_class_classDocumentExtractor:
+
+Class DocumentExtractor
+=======================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: DocumentExtractor
+   :members:
+   :protected-members:
+   :undoc-members:

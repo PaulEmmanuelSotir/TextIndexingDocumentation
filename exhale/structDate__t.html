@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Date_t &mdash; OT1 - Text Indexing  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct DocFreq_t" href="structDocFreq__t.html" />
+    <link rel="prev" title="Struct arguments_t" href="structarguments__t.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OT1 - Text Indexing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Doxygen C++ Backend Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_root.html">C++ Backend</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OT1 - Text Indexing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="docs_root.html">C++ Backend</a> &raquo;</li>
+        
+      <li>Struct Date_t</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exhale/structDate__t.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-date-t">
+<span id="exhale-struct-structdate-t"></span><h1>Struct Date_t<a class="headerlink" href="#struct-date-t" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h.html#file-mnt-d-programation-c-textindexing-backend-src-utility-h"><span class="std std-ref">File utility.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv46Date_t">
+<span id="_CPPv36Date_t"></span><span id="_CPPv26Date_t"></span><span id="Date_t"></span><span class="target" id="structDate__t"></span><em class="property">struct </em><code class="sig-name descname">Date_t</code><a class="headerlink" href="#_CPPv46Date_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#structDate__t"><span class="std std-ref">Date_t</span></a> structure represents a simple year/month/day/weekday date type with typed enums for months and weekdays. </p>
+<p><a class="reference internal" href="#structDate__t"><span class="std std-ref">Date_t</span></a> structures can be parsed using <a class="reference internal" href="#structDate__t_1a36d4a770c1c6a71c164319cb596e702e"><span class="std std-ref">tryParseDate(const std::vector&lt;std::string&gt;&amp;, Date_t&amp;)</span></a> utility function. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="enum">
+<dt id="_CPPv4N6Date_t7month_tE">
+<span id="_CPPv3N6Date_t7month_tE"></span><span id="_CPPv2N6Date_t7month_tE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168"></span><em class="property">enum </em><code class="sig-name descname">month_t</code><a class="headerlink" href="#_CPPv4N6Date_t7month_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t7unknownE">
+<span id="_CPPv3N6Date_t7unknownE"></span><span id="_CPPv2N6Date_t7unknownE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168aad921d60486366258809553a3db49a4a"></span><code class="sig-name descname">unknown</code> = 0<a class="headerlink" href="#_CPPv4N6Date_t7unknownE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t7januaryE">
+<span id="_CPPv3N6Date_t7januaryE"></span><span id="_CPPv2N6Date_t7januaryE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a467b6140fe3bb958f2332983914de787"></span><code class="sig-name descname">january</code><a class="headerlink" href="#_CPPv4N6Date_t7januaryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t8februaryE">
+<span id="_CPPv3N6Date_t8februaryE"></span><span id="_CPPv2N6Date_t8februaryE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a8eb8e307a6d649bc7fb51443a06a216f"></span><code class="sig-name descname">february</code><a class="headerlink" href="#_CPPv4N6Date_t8februaryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t5marchE">
+<span id="_CPPv3N6Date_t5marchE"></span><span id="_CPPv2N6Date_t5marchE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a4061838f4395ef541fb1b3f07e42bc21"></span><code class="sig-name descname">march</code><a class="headerlink" href="#_CPPv4N6Date_t5marchE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t5aprilE">
+<span id="_CPPv3N6Date_t5aprilE"></span><span id="_CPPv2N6Date_t5aprilE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a37d153a06c79e99e4de5889dbe2e7c57"></span><code class="sig-name descname">april</code><a class="headerlink" href="#_CPPv4N6Date_t5aprilE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t3mayE">
+<span id="_CPPv3N6Date_t3mayE"></span><span id="_CPPv2N6Date_t3mayE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a9a4b6f884971dcb4a5172876b335baab"></span><code class="sig-name descname">may</code><a class="headerlink" href="#_CPPv4N6Date_t3mayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t4juneE">
+<span id="_CPPv3N6Date_t4juneE"></span><span id="_CPPv2N6Date_t4juneE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a11501255f17710952e79563ddc090a4d"></span><code class="sig-name descname">june</code><a class="headerlink" href="#_CPPv4N6Date_t4juneE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t4julyE">
+<span id="_CPPv3N6Date_t4julyE"></span><span id="_CPPv2N6Date_t4julyE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a3785a4f12840727f9fc71676c104ac0d"></span><code class="sig-name descname">july</code><a class="headerlink" href="#_CPPv4N6Date_t4julyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t6augustE">
+<span id="_CPPv3N6Date_t6augustE"></span><span id="_CPPv2N6Date_t6augustE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a61a590f1b9b5548efbae70fd7bcf45b3"></span><code class="sig-name descname">august</code><a class="headerlink" href="#_CPPv4N6Date_t6augustE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t9septemberE">
+<span id="_CPPv3N6Date_t9septemberE"></span><span id="_CPPv2N6Date_t9septemberE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a110cea74cf52e41ead691dccdf75f27b"></span><code class="sig-name descname">september</code><a class="headerlink" href="#_CPPv4N6Date_t9septemberE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t7octoberE">
+<span id="_CPPv3N6Date_t7octoberE"></span><span id="_CPPv2N6Date_t7octoberE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168ae60a95f3f443e37f5a47210d9b340a05"></span><code class="sig-name descname">october</code><a class="headerlink" href="#_CPPv4N6Date_t7octoberE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t8novemberE">
+<span id="_CPPv3N6Date_t8novemberE"></span><span id="_CPPv2N6Date_t8novemberE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168a4d04cedd6d05b1f16a4404ff5a1fa4af"></span><code class="sig-name descname">november</code><a class="headerlink" href="#_CPPv4N6Date_t8novemberE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t8decemberE">
+<span id="_CPPv3N6Date_t8decemberE"></span><span id="_CPPv2N6Date_t8decemberE"></span><span class="target" id="structDate__t_1ab2cc4f5893d04b3f8090482f163e3168af962bed5616612c8c7053f6e97e72b12"></span><code class="sig-name descname">december</code><a class="headerlink" href="#_CPPv4N6Date_t8decemberE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="enum">
+<dt id="_CPPv4N6Date_t9weekday_tE">
+<span id="_CPPv3N6Date_t9weekday_tE"></span><span id="_CPPv2N6Date_t9weekday_tE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9"></span><em class="property">enum </em><code class="sig-name descname">weekday_t</code><a class="headerlink" href="#_CPPv4N6Date_t9weekday_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t7unknownE">
+<span id="_CPPv3N6Date_t7unknownE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9aad921d60486366258809553a3db49a4a"></span><code class="sig-name descname">unknown</code> = 0<br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t6mondayE">
+<span id="_CPPv3N6Date_t6mondayE"></span><span id="_CPPv2N6Date_t6mondayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9a944ba223a5c1b5f4b495708e7cd5ee37"></span><code class="sig-name descname">monday</code><a class="headerlink" href="#_CPPv4N6Date_t6mondayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t7tuesdayE">
+<span id="_CPPv3N6Date_t7tuesdayE"></span><span id="_CPPv2N6Date_t7tuesdayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9a1a31a6f65cc993ff6bd9a5b85f0520b0"></span><code class="sig-name descname">tuesday</code><a class="headerlink" href="#_CPPv4N6Date_t7tuesdayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t9wednesdayE">
+<span id="_CPPv3N6Date_t9wednesdayE"></span><span id="_CPPv2N6Date_t9wednesdayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9aaae446086f8e81194ed115b566bf2e3d"></span><code class="sig-name descname">wednesday</code><a class="headerlink" href="#_CPPv4N6Date_t9wednesdayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t8thursdayE">
+<span id="_CPPv3N6Date_t8thursdayE"></span><span id="_CPPv2N6Date_t8thursdayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9ac395246f710b0e2c86b7ed82f7f56ce3"></span><code class="sig-name descname">thursday</code><a class="headerlink" href="#_CPPv4N6Date_t8thursdayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t6fridayE">
+<span id="_CPPv3N6Date_t6fridayE"></span><span id="_CPPv2N6Date_t6fridayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9af6f7fec07f372b7bd5eb196bbca0f3f4"></span><code class="sig-name descname">friday</code><a class="headerlink" href="#_CPPv4N6Date_t6fridayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t8saturdayE">
+<span id="_CPPv3N6Date_t8saturdayE"></span><span id="_CPPv2N6Date_t8saturdayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9a6036c3d913f49f28f35d734589840310"></span><code class="sig-name descname">saturday</code><a class="headerlink" href="#_CPPv4N6Date_t8saturdayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6Date_t6sundayE">
+<span id="_CPPv3N6Date_t6sundayE"></span><span id="_CPPv2N6Date_t6sundayE"></span><span class="target" id="structDate__t_1aa55d3769cba1594d71c1176d247e1ef9a787c74a2e618a696e34e025adda33ad3"></span><code class="sig-name descname">sunday</code><a class="headerlink" href="#_CPPv4N6Date_t6sundayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4NK6Date_t5emptyEv">
+<span id="_CPPv3NK6Date_t5emptyEv"></span><span id="_CPPv2NK6Date_t5emptyEv"></span><span id="Date_t::emptyC"></span><span class="target" id="structDate__t_1ab794b93d2a2cc6b02967b361d106b303"></span>bool <code class="sig-name descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6Date_t5emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6Date_tcvNSt6stringEEv">
+<span id="_CPPv3NK6Date_tcvNSt6stringEEv"></span><span id="_CPPv2NK6Date_tcvNSt6stringEEv"></span><span id="Date_t::castto-ss-operatorC"></span><span class="target" id="structDate__t_1aa5d804ef453b50452133ee2c7173e194"></span><code class="sig-name descname">operator std::string</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6Date_tcvNSt6stringEEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N6Date_t4yearE">
+<span id="_CPPv3N6Date_t4yearE"></span><span id="_CPPv2N6Date_t4yearE"></span><span id="Date_t::year__unsigned-short"></span><span class="target" id="structDate__t_1a53f9bcaa3e2e984de93a8aec6e58bb8e"></span>unsigned short <code class="sig-name descname">year</code> = 0<a class="headerlink" href="#_CPPv4N6Date_t4yearE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6Date_t5monthE">
+<span id="_CPPv3N6Date_t5monthE"></span><span id="_CPPv2N6Date_t5monthE"></span><span id="Date_t::month__month_t"></span><span class="target" id="structDate__t_1ac71d727cb2bf5ab761697b483c9466fa"></span><a class="reference internal" href="#_CPPv4N6Date_t7month_tE" title="Date_t::month_t">month_t</a> <code class="sig-name descname">month</code> = <a class="reference internal" href="#_CPPv4N6Date_t7month_tE" title="Date_t::month_t">month_t</a>::unknown<a class="headerlink" href="#_CPPv4N6Date_t5monthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6Date_t3dayE">
+<span id="_CPPv3N6Date_t3dayE"></span><span id="_CPPv2N6Date_t3dayE"></span><span id="Date_t::day__unsigned-c"></span><span class="target" id="structDate__t_1a73c8a8bce1177e865c3a18c1e7313fdb"></span>unsigned char <code class="sig-name descname">day</code> = 0<a class="headerlink" href="#_CPPv4N6Date_t3dayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6Date_t7weekdayE">
+<span id="_CPPv3N6Date_t7weekdayE"></span><span id="_CPPv2N6Date_t7weekdayE"></span><span id="Date_t::weekday__weekday_t"></span><span class="target" id="structDate__t_1a1e0172b03c0495a662f6da0ac927d480"></span><a class="reference internal" href="#_CPPv4N6Date_t9weekday_tE" title="Date_t::weekday_t">weekday_t</a> <code class="sig-name descname">weekday</code> = <a class="reference internal" href="#_CPPv4N6Date_t9weekday_tE" title="Date_t::weekday_t">weekday_t</a>::unknown<a class="headerlink" href="#_CPPv4N6Date_t7weekdayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Related</p>
+<dl class="function">
+<dt id="_CPPv412tryParseDateRKNSt6vectorINSt6stringEEER6Date_t">
+<span id="_CPPv312tryParseDateRKNSt6vectorINSt6stringEEER6Date_t"></span><span id="_CPPv212tryParseDateRKNSt6vectorINSt6stringEEER6Date_t"></span><span id="tryParseDate__std::vector:ss:CR.Date_tR"></span><span class="target" id="structDate__t_1a36d4a770c1c6a71c164319cb596e702e"></span>bool <code class="sig-name descname">tryParseDate</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>words</em>, <a class="reference internal" href="#_CPPv46Date_t" title="Date_t">Date_t</a> &amp;<em>date</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Parses a <a class="reference internal" href="#structDate__t"><span class="std std-ref">Date_t</span></a> date from a given vector of string words. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A boolean indicating whether if a <a class="reference internal" href="#structDate__t"><span class="std std-ref">Date_t</span></a> date have been sucessfully parsed </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">words</span></code>: Vector of words to be parsed </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">date</span></code>: A reference to the parsed <a class="reference internal" href="#structDate__t"><span class="std std-ref">Date_t</span></a> date </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structDocFreq__t.html" class="btn btn-neutral float-right" title="Struct DocFreq_t" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structarguments__t.html" class="btn btn-neutral float-left" title="Struct arguments_t" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

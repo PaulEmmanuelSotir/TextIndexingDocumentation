@@ -1,0 +1,86 @@
+.. OT1 - Text Indexing documentation master file
+
+===============================================
+Welcome to OT1 - Text Indexing's documentation!
+===============================================
+
+Prérequis
+=========
+
+- Installer node.js ainsi que npm (installé avec node)
+- Installer le package angular-cli globalement
+  - Dans le dossier viewer, executer `make install-angular`
+- Install les packages locaux
+  - Dans le dossier viewer, executer `make install-npm-packages`
+
+Process
+=======
+
+La commande `make build-and-run` va compiler le viewer et le copier dans le serveur puis lancer le serveur sur un port indiqué.
+
+Plus tard pour relancer le serveur sans recompiler le viewer `make run`
+
+Ouvrir le viewer
+================
+
+Rendez vous sur votre navigateur préféré et tapez : 
+
+.. code-block:: bash
+
+    localhost:<le_port_donné_par_le_serveur>
+
+Normalement, le port est le **1337**.
+
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Doxygen C++ Backend Documentation
+
+   about
+   exhale/docs_root.rst
+
+Sphinx Documentation build requirements
+=======================================
+
+Text indexation project is documented with a sphinx documentation with doxygen (C++ code) and Open API (fka Swagger) integrations.
+Please, browse to `./build/sphinx/html/index.html`__ once you have built documentation.
+
+
+In order to build project documentation, you first need to install a conda distribution, e.g. `miniconda <https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html>`__ or `anaconda <https://www.anaconda.com/distribution/>`__
+Then, you will be able to create a conda environement from `<./environement.yml>`__ file. This conda environement brings all dependencies needed to build projet documentation:
+The conda environement includes sphinx documentation framework, doxygen for C++ code documentation, Breathe which makes the bridge between doxygen and sphinx, sphinxcontrib-openapi integrating Open API (fka Swagger) to sphinx documentation, sphinx_rtd_theme sphinx theme, exhale (automatic breath/doxygen documentation), ...
+
+.. code-block:: bash
+
+    # create conda environement (documentation build dependencies are 
+    # installed in an isolated conda environement named 'text_indexing_docs')
+    conda env create -f ./environement.yml
+    # Once created, you can activate conda environement in order to build documentation
+    conda activate text_indexing_docs
+
+
+Then, you can (re)build doxygen and sphinx documentation using provided `<./makefile>`__ (or `<./make.bat>`__ on windows):
+
+
+.. code-block:: bash
+
+    make html
+
+Note that doxygen is now built by exhale extension when running sphinx (see  `<./source/config.py>`__ ).
+Once documentation successfully built, you can browse to generated documentation main page:  `<./build/sphinx/html/index.html>`__  
+
+.. TODO: remove it:
+.. openapi ./front_openapi_spec.yml
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+
+.. image:: https://www.insa-lyon.fr/sites/www.insa-lyon.fr/files/logo-coul.jpg
+   :height: 510px
+   :width: 1772 px
+   :scale: 20 %
+   :alt: INSA Lyon - Projet 5IF OT1
+   :align: center

@@ -1,0 +1,13 @@
+.. _exhale_typedef_namespacenlohmann_1a2bfd99e845a2e5cd90aeaf1b1431f474:
+
+Typedef nlohmann::json
+======================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: nlohmann::json

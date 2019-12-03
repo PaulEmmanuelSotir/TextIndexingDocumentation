@@ -1,0 +1,16 @@
+.. _exhale_class_classnlohmann_1_1detail_1_1json__sax__dom__callback__parser:
+
+Template Class json_sax_dom_callback_parser
+===========================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: nlohmann::detail::json_sax_dom_callback_parser
+   :members:
+   :protected-members:
+   :undoc-members:

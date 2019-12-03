@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File main.cpp &mdash; OT1 - Text Indexing  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OT1 - Text Indexing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Doxygen C++ Backend Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_root.html">C++ Backend</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OT1 - Text Indexing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File main.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exhale/program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-main-cpp">
+<span id="program-listing-file-mnt-d-programation-c-textindexing-backend-main-cpp"></span><h1>Program Listing for File main.cpp<a class="headerlink" href="#program-listing-for-file-main-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp.html#file-mnt-d-programation-c-textindexing-backend-main-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/main.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;src/files.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/Tokenizer.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/DocumentExtractor.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/DocumentParser.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/InvertedFile.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/search.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/utility.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/TA.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;src/FA.h&quot;</span><span class="cp"></span>
+
+<span class="k">typedef</span> <span class="n">unsigned_ints</span> <span class="n">FileDocumentUID_t</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">callback_t</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">file_tagsdata_process</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">,</span> <span class="n">callback_t</span> <span class="n">callback</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">PreprocessorTagsData</span> <span class="n">preproc</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">is</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is</span><span class="p">)</span> <span class="k">throw</span> <span class="n">custom_exception</span><span class="o">::</span><span class="n">fs_access</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">is</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">tagordata</span> <span class="o">=</span> <span class="n">preproc</span><span class="p">.</span><span class="n">separateTagsData</span><span class="p">(</span><span class="n">is</span><span class="p">);</span>
+        <span class="n">callback</span><span class="p">(</span><span class="n">tagordata</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">file_tagsdata_print</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">file_tagsdata_process</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">[]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">tagordata</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">tagordata</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">callback_t</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">file_documents_process</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">,</span> <span class="n">callback_t</span> <span class="n">callback</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">DocumentExtractor</span> <span class="n">docextractor</span><span class="p">;</span>
+
+    <span class="n">file_tagsdata_process</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">tagordata</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">docextractor</span><span class="p">.</span><span class="n">parseTagOrData</span><span class="p">(</span><span class="n">tagordata</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="n">consumeDocuments</span><span class="p">(</span><span class="n">docextractor</span><span class="p">.</span><span class="n">getDocument</span><span class="p">(),</span> <span class="n">callback</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">file_documents_print</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">file_documents_process</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">[]</span> <span class="p">(</span><span class="n">DocumentTree_t</span><span class="o">&amp;</span> <span class="n">document_tree</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">DocumentData_t</span> <span class="n">document</span><span class="p">;</span>
+        <span class="n">extractDocumentData</span><span class="p">(</span><span class="n">document_tree</span><span class="p">,</span> <span class="n">document</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">document</span><span class="p">.</span><span class="n">DOCNO</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+
+<span class="kt">bool</span> <span class="n">loadInputFiles</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">input_files</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">inputs</span><span class="p">(</span><span class="s">&quot;inputs.txt&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">inputs</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="n">input_files</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">path</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;</span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">path</span><span class="p">);)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+
+        <span class="n">input_files</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">loadDocumentJSON</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">input_files</span><span class="p">,</span> <span class="n">FileDocumentUID_t</span> <span class="n">ID</span><span class="p">,</span> <span class="n">DocumentJSON_t</span><span class="o">&amp;</span> <span class="n">documentJSON</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">input_file</span> <span class="o">=</span> <span class="n">input_files</span><span class="p">[</span><span class="n">ID</span><span class="p">.</span><span class="n">first</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">documentID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="n">found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">file_documents_process</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">(</span><span class="n">DocumentTree_t</span><span class="o">&amp;</span> <span class="n">document_tree</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">++</span><span class="n">documentID</span> <span class="o">==</span> <span class="n">ID</span><span class="p">.</span><span class="n">second</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">extractDocumentJSON</span><span class="p">(</span><span class="n">document_tree</span><span class="p">,</span> <span class="n">documentJSON</span><span class="p">);</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="n">found</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">makeInvertedFile</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">input_files</span><span class="p">,</span> <span class="n">InvertedFile_t</span><span class="o">&amp;</span> <span class="n">IF</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Parsing the input files...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">FileDocumentUID_t</span> <span class="n">filedocumentID</span><span class="p">;</span>
+
+    <span class="n">filedocumentID</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="nl">path</span> <span class="p">:</span> <span class="n">input_files</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">path</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">filedocumentID</span><span class="p">.</span><span class="n">first</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="n">filedocumentID</span><span class="p">.</span><span class="n">second</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">file_documents_process</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">(</span><span class="n">DocumentTree_t</span><span class="o">&amp;</span> <span class="n">document_tree</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">filedocumentID</span><span class="p">.</span><span class="n">second</span><span class="o">++</span><span class="p">;</span>
+
+                <span class="n">DocumentData_t</span> <span class="n">document</span><span class="p">;</span>
+                <span class="n">extractDocumentData</span><span class="p">(</span><span class="n">document_tree</span><span class="p">,</span> <span class="n">document</span><span class="p">);</span>
+
+                <span class="n">TFID_t</span> <span class="n">document_TFID</span> <span class="o">=</span> <span class="n">TFC_to_TFID</span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="n">TEXT</span><span class="p">);</span>
+                <span class="n">invertedFileAdd</span><span class="p">(</span><span class="n">IF</span><span class="p">,</span> <span class="n">filedocumentID</span><span class="p">,</span> <span class="n">document_TFID</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">custom_exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="p">{</span>
+            <span class="k">case</span> <span class="n">custom_exception</span><span class="o">::</span><span class="nl">fs_access</span><span class="p">:</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ERROR: file not found / access denied&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">custom_exception</span><span class="o">::</span><span class="nl">parsing_error</span><span class="p">:</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ERROR: invalid tag structure&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="o">:</span> <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">struct</span> <span class="n">arguments_t</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">index</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">query</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">documentID</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">bool</span> <span class="nf">parseArgs</span><span class="p">(</span><span class="n">arguments_t</span><span class="o">&amp;</span> <span class="n">arguments</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">arguments</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">arguments</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">arguments</span><span class="p">.</span><span class="n">documentID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">streq</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;index&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">arguments</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">streq</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;query&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">arguments</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">argc</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argi</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">argi</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="n">argi</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">arguments</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">argi</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">streq</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;document_json&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">tryParseInt</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arguments</span><span class="p">.</span><span class="n">documentID</span><span class="p">))</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+<span class="c1">// ======== Modes</span>
+
+<span class="kt">bool</span> <span class="nf">modeBuildInvertedFile</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">input_files</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">InvertedFile_t</span> <span class="n">IF</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Generating the InvertedFile...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">makeInvertedFile</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span> <span class="n">IF</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Generated the InvertedFile successfully.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Exporting &#39;InvertedFile.bin&#39;...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">IFExport</span><span class="p">(</span><span class="n">IF</span><span class="p">,</span> <span class="s">&quot;InvertedFile.bin&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;FATAL ERROR: Unable to export the InvertedFile in &#39;InvertedFile.bin&#39;.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Exported &#39;InvertedFile.bin&#39; successfully.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">modeQuerySearch</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">words</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">InvertedFile_t</span> <span class="n">IF</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="nl">word</span> <span class="p">:</span> <span class="n">words</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stemming_stopword</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="n">word</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="n">words</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">remove_if</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">word</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">}),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">IFImportPart</span><span class="p">(</span><span class="n">IF</span><span class="p">,</span> <span class="s">&quot;InvertedFile.bin&quot;</span><span class="p">,</span> <span class="n">words</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ERROR: Unable to import &#39;InvertedFile.bin&#39;.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Run this program with the argument &#39;index&#39; to generate it.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TA</span><span class="o">::</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="n">tab</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">it</span><span class="p">:</span> <span class="n">IF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span><span class="o">&amp;</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TA</span><span class="o">::</span><span class="n">TF</span><span class="o">&gt;</span> <span class="n">row</span><span class="p">;</span> <span class="n">row</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">elem</span> <span class="p">:</span> <span class="n">vec</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">TA</span><span class="o">::</span><span class="n">TF</span> <span class="n">item</span><span class="p">;</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">elem</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+            <span class="n">item</span><span class="p">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="n">freqTF</span><span class="p">(</span><span class="n">elem</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+            <span class="n">row</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">row</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[]</span> <span class="p">(</span><span class="n">TA</span><span class="o">::</span><span class="n">TF</span><span class="o">&amp;</span> <span class="n">f1</span><span class="p">,</span> <span class="n">TA</span><span class="o">::</span><span class="n">TF</span><span class="o">&amp;</span> <span class="n">f2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">f1</span><span class="p">.</span><span class="n">frequency</span> <span class="o">&gt;</span> <span class="n">f2</span><span class="p">.</span><span class="n">frequency</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">f1</span><span class="p">.</span><span class="n">frequency</span> <span class="o">==</span> <span class="n">f2</span><span class="p">.</span><span class="n">frequency</span> <span class="o">&amp;&amp;</span> <span class="n">f1</span><span class="p">.</span><span class="n">d</span> <span class="o">&lt;</span> <span class="n">f2</span><span class="p">.</span><span class="n">d</span><span class="p">);</span>
+        <span class="p">});</span>
+        <span class="n">tab</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">row</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">TA</span> <span class="n">ta</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TA</span><span class="o">::</span><span class="n">TS</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ta</span><span class="p">.</span><span class="n">TAlgo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">tab</span><span class="p">);</span>
+
+    <span class="n">SearchResults_t</span> <span class="n">resultsTA</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">res</span> <span class="p">:</span> <span class="n">result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">DocFreq_t</span> <span class="n">freq</span><span class="p">;</span>
+        <span class="n">freq</span><span class="p">.</span><span class="n">docID</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">d</span><span class="p">;</span>
+        <span class="n">freq</span><span class="p">.</span><span class="n">frequency</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">score</span> <span class="o">*</span> <span class="mi">50000</span><span class="p">;</span>
+        <span class="n">freq</span><span class="p">.</span><span class="n">frequency</span><span class="p">.</span><span class="n">second</span> <span class="o">=</span> <span class="mi">50000</span><span class="p">;</span>
+        <span class="n">resultsTA</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">freq</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">FA</span> <span class="n">fa</span><span class="p">;</span>
+    <span class="n">fa</span><span class="p">.</span><span class="n">FAlgo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">tab</span><span class="p">);</span>
+
+    <span class="n">SearchResults_t</span> <span class="n">resultsFA</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">res</span> <span class="p">:</span> <span class="n">fa</span><span class="p">.</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">DocFreq_t</span> <span class="n">freq</span><span class="p">;</span>
+        <span class="n">freq</span><span class="p">.</span><span class="n">docID</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">d</span><span class="p">;</span>
+        <span class="n">freq</span><span class="p">.</span><span class="n">frequency</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="n">score</span> <span class="o">*</span> <span class="mi">50000</span><span class="p">;</span>
+        <span class="n">freq</span><span class="p">.</span><span class="n">frequency</span><span class="p">.</span><span class="n">second</span> <span class="o">=</span> <span class="mi">50000</span><span class="p">;</span>
+        <span class="n">resultsFA</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">freq</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">//auto resultsConjunction = resultsOrder(searchNaive(IF, aggregate_maps_AND_min), 10);</span>
+    <span class="c1">//auto resultsDisjunction = resultsOrder(searchNaive(IF, aggregate_maps_OR_max), 10);</span>
+
+    <span class="k">auto</span> <span class="n">resultsShow</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span> <span class="n">SearchResults_t</span><span class="o">&amp;</span> <span class="n">results</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Top 10 (&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;):&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">result</span> <span class="p">:</span> <span class="n">results</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="o">++</span><span class="n">index</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. document &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">.</span><span class="n">docID</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; (frequency: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">freqTF</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">frequency</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="c1">//resultsShow(resultsConjunction, &quot;naive search conjunction&quot;);</span>
+    <span class="c1">//resultsShow(resultsDisjunction, &quot;naive search disjunction&quot;);</span>
+    <span class="n">resultsShow</span><span class="p">(</span><span class="n">resultsTA</span><span class="p">,</span> <span class="s">&quot;TA&quot;</span><span class="p">);</span>
+    <span class="n">resultsShow</span><span class="p">(</span><span class="n">resultsFA</span><span class="p">,</span> <span class="s">&quot;FA&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">modeQueryDocument</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">input_files</span><span class="p">,</span> <span class="n">FileDocumentUID_t</span> <span class="n">documentID</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">DocumentJSON_t</span> <span class="n">documentJSON</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">loadDocumentJSON</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span> <span class="n">documentID</span><span class="p">,</span> <span class="n">documentJSON</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ERROR: Could not load the document with ID &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">documentID</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">documentJSON</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">modeDefault</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">InvertedFile_t</span> <span class="n">IF</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Importing &#39;InvertedFile.bin&#39;...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">IFImport</span><span class="p">(</span><span class="n">IF</span><span class="p">,</span> <span class="s">&quot;InvertedFile.bin&quot;</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Unable to import &#39;InvertedFile.bin&#39;.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Run this program with the argument &#39;index&#39; to generate it.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Imported &#39;InvertedFile.bin&#39; successfully.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;InvertedFile contains &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">IF</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; entries.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// ======== Where the magic happens!</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">input_files</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">loadInputFiles</span><span class="p">(</span><span class="n">input_files</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;FATAL ERROR: Unable to load &#39;inputs.txt&#39; containing the list of input files.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">arguments_t</span> <span class="n">arguments</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">parseArgs</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">argv</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;WARNING: Missing command line arguments.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Available arguments are:&quot;</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+                <span class="o">&lt;&lt;</span> <span class="s">&quot;- &#39;index&#39; to (re)build the InvertedFile&quot;</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+                <span class="o">&lt;&lt;</span> <span class="s">&quot;- &#39;query &lt;word&gt; &lt;word&gt; ...&#39; to search for articles&quot;</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+                <span class="o">&lt;&lt;</span> <span class="s">&quot;- &#39;document_json &lt;ID&gt;&#39; to get the full contents of an article&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ERROR: Unable to parse command line arguments.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//try</span>
+    <span class="p">{</span>
+        <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">arguments</span><span class="p">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="n">modeBuildInvertedFile</span><span class="p">(</span><span class="n">input_files</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arguments</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="n">modeQuerySearch</span><span class="p">(</span><span class="n">arguments</span><span class="p">.</span><span class="n">query</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">arguments</span><span class="p">.</span><span class="n">documentID</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="n">modeQueryDocument</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span> <span class="n">FileDocumentUID_t</span><span class="p">(</span><span class="n">arguments</span><span class="p">.</span><span class="n">documentID</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arguments</span><span class="p">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="n">modeDefault</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">success</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="cm">/*</span>
+<span class="cm">    catch (...)</span>
+<span class="cm">    {</span>
+<span class="cm">        std::cout &lt;&lt; std::endl;</span>
+
+<span class="cm">        std::cerr &lt;&lt; &quot;FATAL ERROR: uncaught exception.&quot; &lt;&lt; std::endl;</span>
+
+<span class="cm">        try</span>
+<span class="cm">        {</span>
+<span class="cm">            /re/throw;</span>
+<span class="cm">        }</span>
+<span class="cm">        catch (const custom_exception&amp; e)</span>
+<span class="cm">        {</span>
+<span class="cm">            switch (e)</span>
+<span class="cm">            {</span>
+<span class="cm">            case custom_exception::fs_access:</span>
+<span class="cm">                std::cerr &lt;&lt; &quot;Details: error on file i/o operations.&quot; &lt;&lt; std::endl;</span>
+<span class="cm">                break;</span>
+<span class="cm">            case custom_exception::parsing_error:</span>
+<span class="cm">                std::cerr &lt;&lt; &quot;Details: incorrect file structure.&quot; &lt;&lt; std::endl;</span>
+<span class="cm">                break;</span>
+<span class="cm">            default:</span>
+<span class="cm">                break;</span>
+<span class="cm">            }</span>
+<span class="cm">        }</span>
+<span class="cm">        catch (const std::exception&amp; e)</span>
+<span class="cm">        {</span>
+<span class="cm">            std::cerr &lt;&lt; &quot;Details: &quot; &lt;&lt; e.what() &lt;&lt; std::endl;</span>
+<span class="cm">        }</span>
+<span class="cm">        catch (...)</span>
+<span class="cm">        {</span>
+<span class="cm">        }</span>
+
+<span class="cm">        std::cout &lt;&lt; &quot;Aborting.&quot; &lt;&lt; std::endl;</span>
+<span class="cm">        return 1;</span>
+<span class="cm">    }*/</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

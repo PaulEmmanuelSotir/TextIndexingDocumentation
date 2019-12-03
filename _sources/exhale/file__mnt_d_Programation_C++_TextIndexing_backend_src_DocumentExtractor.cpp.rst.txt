@@ -1,0 +1,41 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.cpp:
+
+File DocumentExtractor.cpp
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/DocumentExtractor.cpp``)
+---------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``DocumentExtractor.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.h`)
+
+- ``algorithm``
+
+- ``utility.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h`)
+
+
+
+
+

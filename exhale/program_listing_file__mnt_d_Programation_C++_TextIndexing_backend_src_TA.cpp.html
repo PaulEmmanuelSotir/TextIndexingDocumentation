@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File TA.cpp &mdash; OT1 - Text Indexing  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OT1 - Text Indexing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Doxygen C++ Backend Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_root.html">C++ Backend</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OT1 - Text Indexing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File TA.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exhale/program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-ta-cpp">
+<span id="program-listing-file-mnt-d-programation-c-textindexing-backend-src-ta-cpp"></span><h1>Program Listing for File TA.cpp<a class="headerlink" href="#program-listing-for-file-ta-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.cpp.html#file-mnt-d-programation-c-textindexing-backend-src-ta-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/src/TA.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;TA.h&quot;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kr">inline</span> <span class="kt">bool</span> <span class="nf">sortinrev</span><span class="p">(</span><span class="k">const</span> <span class="n">TA</span><span class="o">::</span><span class="n">TS</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="k">const</span> <span class="n">TA</span><span class="o">::</span><span class="n">TS</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">a</span><span class="p">.</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">score</span><span class="p">)</span> <span class="o">||</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">score</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">score</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">.</span><span class="n">d</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="n">d</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">removeC</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">C</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">sortinrev</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">C</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="n">k</span><span class="p">){</span>
+        <span class="n">C</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">TA</span><span class="o">::</span><span class="n">calculScore</span><span class="p">(</span><span class="n">TF</span> <span class="n">pl</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">tab</span><span class="p">){</span>
+    <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="nl">row</span> <span class="p">:</span> <span class="n">tab</span> <span class="p">){</span>
+       <span class="k">for</span> <span class="p">(</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="nl">s</span> <span class="p">:</span> <span class="n">row</span> <span class="p">){</span>
+           <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">d</span><span class="o">==</span><span class="n">pl</span><span class="p">.</span><span class="n">d</span><span class="p">){</span>
+               <span class="n">sum</span> <span class="o">+=</span> <span class="n">s</span><span class="p">.</span><span class="n">frequency</span><span class="p">;</span>
+           <span class="p">}</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="o">/</span><span class="n">tab</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">InsertC</span><span class="p">(</span><span class="n">TF</span> <span class="n">pl</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">tab</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">TS</span> <span class="nl">itPL</span><span class="p">:</span><span class="n">C</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">itPL</span><span class="p">.</span><span class="n">d</span><span class="o">==</span><span class="n">pl</span><span class="p">.</span><span class="n">d</span><span class="p">){</span>
+            <span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">){</span>
+        <span class="n">TS</span> <span class="n">TS</span><span class="o">=</span><span class="p">{</span><span class="n">pl</span><span class="p">.</span><span class="n">d</span><span class="p">,</span><span class="n">calculScore</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span><span class="n">tab</span><span class="p">)};</span>
+        <span class="n">C</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">TS</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">display_vector</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">));</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">displayC</span><span class="p">(){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">C</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">C</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">d</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="o">&lt;&lt;</span><span class="n">C</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">score</span><span class="o">&lt;&lt;</span><span class="s">&quot;; &quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">displayTab</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">tab</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;</span> <span class="nl">vpl</span><span class="p">:</span> <span class="n">tab</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">TF</span> <span class="nl">pl</span><span class="p">:</span> <span class="n">vpl</span><span class="p">){</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">pl</span><span class="p">.</span><span class="n">d</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="o">&lt;&lt;</span><span class="n">pl</span><span class="p">.</span><span class="n">frequency</span><span class="o">&lt;&lt;</span><span class="s">&quot;; &quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">bool</span> <span class="n">TA</span><span class="o">::</span><span class="n">kDocT</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">TS</span> <span class="nl">TS</span><span class="p">:</span> <span class="n">C</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">TS</span><span class="p">.</span><span class="n">score</span><span class="o">&gt;=</span><span class="n">t</span><span class="p">){</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">sortedAccess</span><span class="p">(</span><span class="kt">int</span> <span class="n">row</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">tab</span><span class="p">){</span>
+    <span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;</span> <span class="nl">vpl</span><span class="p">:</span><span class="n">tab</span><span class="p">){</span>
+        <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="n">vpl</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">row</span><span class="p">).</span><span class="n">frequency</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">/</span><span class="n">tab</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="cm">/*</span>
+<span class="cm"> * At each sequential access</span>
+<span class="cm">    (a) Set the threshold t to be the aggregate of the scores seen in this access.</span>
+<span class="cm">    (b) Do random accesses and compute the scores of the seen objects.</span>
+<span class="cm">    (c) Maintain a list of top-k objects seen so far</span>
+<span class="cm">    (d) Stop, when the scores of the top-k are greater or equal to the threshold.</span>
+
+<span class="cm"> * */</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">step1</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">tab</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span><span class="o">&gt;</span><span class="n">tab</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">size</span><span class="p">()){</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">TF</span> <span class="nl">tf1</span><span class="p">:</span><span class="n">tab</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)){</span>
+            <span class="n">C</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">tf1</span><span class="p">.</span><span class="n">d</span><span class="p">,</span><span class="n">calculScore</span><span class="p">(</span><span class="n">tf1</span><span class="p">,</span><span class="n">tab</span><span class="p">)});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">kDocT</span><span class="p">(</span><span class="n">k</span><span class="p">)){</span>
+            <span class="n">TF</span> <span class="n">pl</span><span class="p">;</span>
+            <span class="n">sortedAccess</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">tab</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;</span> <span class="nl">qt</span><span class="p">:</span> <span class="n">tab</span><span class="p">){</span>
+                <span class="n">pl</span><span class="o">=</span><span class="n">qt</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">row</span><span class="p">);</span>
+                <span class="n">InsertC</span><span class="p">(</span><span class="n">pl</span><span class="p">,</span><span class="n">tab</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">removeC</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+            <span class="n">row</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cm">/*</span>
+<span class="cm"> * 2. Return the top-k seen so far</span>
+<span class="cm"> * */</span>
+<span class="kt">void</span> <span class="n">TA</span><span class="o">::</span><span class="n">step2</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">C</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">sortinrev</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">k</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">C</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+            <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">C</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">C</span><span class="o">=</span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">TA</span><span class="o">::</span><span class="n">TS</span><span class="o">&gt;</span> <span class="n">TA</span><span class="o">::</span><span class="n">TAlgo</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TF</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">tab</span><span class="p">){</span>
+    <span class="n">step1</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">tab</span><span class="p">);</span>
+    <span class="n">step2</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+    <span class="c1">//return result;</span>
+    <span class="k">return</span> <span class="n">C</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

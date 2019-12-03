@@ -1,0 +1,51 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_Stemmer.cpp:
+
+File Stemmer.cpp
+================
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/Stemmer.cpp``)
+-----------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_Stemmer.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstring``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classStemmer`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_Stemmer_8cpp_1a2a1223defb219d3d5377dc5f414bee50`
+

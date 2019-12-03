@@ -1,0 +1,13 @@
+.. _exhale_define_json_8hpp_1ae7fdc438c6d6cb1f17c4373bce5a802d:
+
+Define INCLUDE_NLOHMANN_JSON_FWD_HPP_
+=====================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: INCLUDE_NLOHMANN_JSON_FWD_HPP_

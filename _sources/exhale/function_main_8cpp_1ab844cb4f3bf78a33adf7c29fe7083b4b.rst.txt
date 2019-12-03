@@ -1,0 +1,13 @@
+.. _exhale_function_main_8cpp_1ab844cb4f3bf78a33adf7c29fe7083b4b:
+
+Function loadDocumentJSON
+=========================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: loadDocumentJSON(const std::vector<std::string>&, FileDocumentUID_t, DocumentJSON_t&)

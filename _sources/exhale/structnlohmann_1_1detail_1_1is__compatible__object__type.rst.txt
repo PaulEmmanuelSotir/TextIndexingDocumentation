@@ -1,0 +1,25 @@
+.. _exhale_struct_structnlohmann_1_1detail_1_1is__compatible__object__type:
+
+Template Struct is_compatible_object_type
+=========================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public nlohmann::detail::is_compatible_object_type_impl< BasicJsonType, CompatibleObjectType >`` (:ref:`exhale_struct_structnlohmann_1_1detail_1_1is__compatible__object__type__impl`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: nlohmann::detail::is_compatible_object_type
+   :members:
+   :protected-members:
+   :undoc-members:

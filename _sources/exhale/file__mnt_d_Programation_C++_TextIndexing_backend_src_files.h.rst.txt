@@ -1,0 +1,104 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h:
+
+File files.h
+============
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend_src>` (``/mnt/d/Programation/C++/TextIndexing/backend/src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+Utility functions to read/write from/to files and defaines :ref:`exhale_struct_structunsigned__ints` structure. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/src/files.h``)
+-------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye 
+
+0.1 
+
+2019-12-02
+
+Copyright (c) 2019
+
+This header file defines the :ref:`exhale_struct_structunsigned__ints`, and various template function which makes easier to read and write files using std:map-s or std::vector-s of std::pair-s. :ref:`exhale_struct_structunsigned__ints` stores two uint16_t can be constructed/casted from/to a uint32_t value, interpreting uint32_t's 16 first bits as the first value and the remaining bits as the second value. 
+
+
+
+
+Includes
+--------
+
+
+- ``cstdint``
+
+- ``iostream``
+
+- ``map``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp`
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.h`
+
+- :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structunsigned__ints`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_files_8h_1a63d360696e4d94d6a1fcd8654bdd5fa0`
+
+- :ref:`exhale_function_files_8h_1a1c9f8959733eae8626f49d3008367fea`
+
+- :ref:`exhale_function_files_8h_1a5bca968d820bd7045900e931741b1e0f`
+
+- :ref:`exhale_function_files_8h_1adf45720902bb59c765db0750fed4debf`
+
+- :ref:`exhale_function_files_8h_1a071a01dba06f29ca871450139dbae312`
+
+- :ref:`exhale_function_files_8h_1aa9bcae9a62265b151a15f6c8a17002d0`
+
+- :ref:`exhale_function_files_8h_1a6a9a6999eb679395f32aa211974922b9`
+
+- :ref:`exhale_function_files_8h_1ad64d7075f952c9f9ceedf6789e8d9605`
+
+- :ref:`exhale_function_files_8h_1a218fc6356432151b1f2769fea17b23f3`
+

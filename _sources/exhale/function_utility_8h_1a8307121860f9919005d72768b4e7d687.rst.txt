@@ -1,0 +1,13 @@
+.. _exhale_function_utility_8h_1a8307121860f9919005d72768b4e7d687:
+
+Function strstrip(const std::string&)
+=====================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: strstrip(const std::string&)

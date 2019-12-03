@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File DocumentParser.cpp &mdash; OT1 - Text Indexing  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OT1 - Text Indexing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Doxygen C++ Backend Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_root.html">C++ Backend</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OT1 - Text Indexing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>File DocumentParser.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exhale/file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-documentparser-cpp">
+<span id="file-mnt-d-programation-c-textindexing-backend-src-documentparser-cpp"></span><h1>File DocumentParser.cpp<a class="headerlink" href="#file-documentparser-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="dir__mnt_d_Programation_C++_TextIndexing_backend_src.html#dir-mnt-d-programation-c-textindexing-backend-src"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/src</span></code>)</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-mnt-d-programation-c-textindexing-backend-src-documentparser-cpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/src/DocumentParser.cpp</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id3">Functions</a></p></li>
+</ul>
+</div>
+<div class="section" id="definition-mnt-d-programation-c-textindexing-backend-src-documentparser-cpp">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/src/DocumentParser.cpp</span></code>)<a class="headerlink" href="#definition-mnt-d-programation-c-textindexing-backend-src-documentparser-cpp" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.cpp.html">Program Listing for File DocumentParser.cpp</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DocumentParser.h</span></code> (<a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h.html#file-mnt-d-programation-c-textindexing-backend-src-documentparser-h"><span class="std std-ref">File DocumentParser.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stemmer.h</span></code> (<a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_Stemmer.h.html#file-mnt-d-programation-c-textindexing-backend-src-stemmer-h"><span class="std std-ref">File Stemmer.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stopwords.h</span></code> (<a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_Stopwords.h.html#file-mnt-d-programation-c-textindexing-backend-src-stopwords-h"><span class="std std-ref">File Stopwords.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tokenizer.h</span></code> (<a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.h.html#file-mnt-d-programation-c-textindexing-backend-src-tokenizer-h"><span class="std std-ref">File Tokenizer.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iostream</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1a554541aa4e49600213c4708b55296f1a.html#exhale-function-documentparser-8cpp-1a554541aa4e49600213c4708b55296f1a"><span class="std std-ref">Function extractDocumentData(DocumentTree_t&amp;, DocumentData_t&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1a91ecc8a861803ee14c5d35dfd1ec9f87.html#exhale-function-documentparser-8cpp-1a91ecc8a861803ee14c5d35dfd1ec9f87"><span class="std std-ref">Function extractDocumentJSON(DocumentTree_t&amp;, DocumentJSON_t&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1ac356569a18a7b850bb93894c1b099487.html#exhale-function-documentparser-8cpp-1ac356569a18a7b850bb93894c1b099487"><span class="std std-ref">Template Function extractTokens(const std::string&amp;, TFC_t&amp;, preprocessor_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1a261c46f3ca5723ad65356d687a809861.html#exhale-function-documentparser-8cpp-1a261c46f3ca5723ad65356d687a809861"><span class="std std-ref">Function extractTokens(const std::string&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1a6e5a0362fbd545278f6d5f31da93acfd.html#exhale-function-documentparser-8cpp-1a6e5a0362fbd545278f6d5f31da93acfd"><span class="std std-ref">Function extractTokens(const std::string&amp;, TFC_t&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1ab23fb828fd19a73f8ee85effde2dc33f.html#exhale-function-documentparser-8cpp-1ab23fb828fd19a73f8ee85effde2dc33f"><span class="std std-ref">Function operator&lt;&lt;(std::ostream&amp;, const string_view&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1aa59fcbc64ddcc29da8dc9b2dbefa577f.html#exhale-function-documentparser-8cpp-1aa59fcbc64ddcc29da8dc9b2dbefa577f"><span class="std std-ref">Function operator&lt;&lt;(std::ostream&amp;, const DocumentJSON_t&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1ae38ff4fb78bad946c8b695e1bbc4b594.html#exhale-function-documentparser-8cpp-1ae38ff4fb78bad946c8b695e1bbc4b594"><span class="std std-ref">Function print_tags(const DocumentTree_t&amp;, const std::string&amp;)</span></a></p></li>
+<li><p><a class="reference internal" href="function_DocumentParser_8cpp_1afb3c8edaf63a7d769d0fda3b4316327c.html#exhale-function-documentparser-8cpp-1afb3c8edaf63a7d769d0fda3b4316327c"><span class="std std-ref">Function stemming_stopword(std::string&amp;)</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

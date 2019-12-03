@@ -1,0 +1,13 @@
+.. _exhale_function_namespacenlohmann_1_1detail_1a85955b9c6dd31846e4b8e891f78614b6:
+
+Template Function nlohmann::detail::get_arithmetic_value
+========================================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_includes_json.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nlohmann::detail::get_arithmetic_value(const BasicJsonType&, ArithmeticType&)

@@ -1,0 +1,13 @@
+.. _exhale_function_files_8h_1a6a9a6999eb679395f32aa211974922b9:
+
+Template Function binWrite
+==========================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: binWrite(std::ostream&, const T&)

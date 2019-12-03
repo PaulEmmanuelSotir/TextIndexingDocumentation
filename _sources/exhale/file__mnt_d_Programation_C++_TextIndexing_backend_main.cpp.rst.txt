@@ -1,0 +1,102 @@
+
+.. _file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp:
+
+File main.cpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_d_Programation_C++_TextIndexing_backend>` (``/mnt/d/Programation/C++/TextIndexing/backend``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/d/Programation/C++/TextIndexing/backend/main.cpp``)
+----------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fstream``
+
+- ``iostream``
+
+- ``src/DocumentExtractor.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentExtractor.h`)
+
+- ``src/DocumentParser.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.h`)
+
+- ``src/FA.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_FA.h`)
+
+- ``src/InvertedFile.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.h`)
+
+- ``src/TA.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_TA.h`)
+
+- ``src/Tokenizer.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.h`)
+
+- ``src/files.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.h`)
+
+- ``src/search.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_search.h`)
+
+- ``src/utility.h`` (:ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_utility.h`)
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structarguments__t`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_main_8cpp_1ac143920934ecf32e4ec8ced037789c10`
+
+- :ref:`exhale_function_main_8cpp_1af245db752d51784b71dd6018c0f9353e`
+
+- :ref:`exhale_function_main_8cpp_1a93c025f42511ae663a84e914eb39bd6a`
+
+- :ref:`exhale_function_main_8cpp_1a87bf8243a167d0617484181568c0c0a9`
+
+- :ref:`exhale_function_main_8cpp_1ab844cb4f3bf78a33adf7c29fe7083b4b`
+
+- :ref:`exhale_function_main_8cpp_1a218de694bd7afcdf5c7976d3f19170b4`
+
+- :ref:`exhale_function_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97`
+
+- :ref:`exhale_function_main_8cpp_1a8f193bc17610ca7eaa8c62ee73672db1`
+
+- :ref:`exhale_function_main_8cpp_1a3ba643ef27de7f083ba7c8ea42fd2cab`
+
+- :ref:`exhale_function_main_8cpp_1a442171f6ef97fc704cb38bd849c13350`
+
+- :ref:`exhale_function_main_8cpp_1a4e396ffb32bae5e034a110db275fd54f`
+
+- :ref:`exhale_function_main_8cpp_1acc777c3b590b755b257382e6164dc7dd`
+
+- :ref:`exhale_function_main_8cpp_1a572ae473651085f8b6a4a474706c1a04`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_main_8cpp_1a949a1b3b5676ed49fc334c96892fcbec`
+

@@ -1,0 +1,17 @@
+
+C++ Backend
+===========
+
+
+
+.. note::
+
+The following documentation presents the OT1 - Text Indexation C++ backend. This Sphinx documentation is generated from doxygen C++ code comments through breath and exhale.
+
+
+.. include:: class_view_hierarchy.rst
+
+.. include:: file_view_hierarchy.rst
+
+.. include:: unabridged_api.rst
+

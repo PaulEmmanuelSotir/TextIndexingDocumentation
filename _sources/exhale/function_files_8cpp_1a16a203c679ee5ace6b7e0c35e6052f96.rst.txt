@@ -1,0 +1,13 @@
+.. _exhale_function_files_8cpp_1a16a203c679ee5ace6b7e0c35e6052f96:
+
+Function binSkip< unsigned int >
+================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: binSkip< unsigned int >(std::istream&)

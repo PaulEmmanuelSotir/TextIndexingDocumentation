@@ -1,0 +1,13 @@
+.. _exhale_function_main_8cpp_1a3ba643ef27de7f083ba7c8ea42fd2cab:
+
+Function modeBuildInvertedFile
+==============================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_main.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: modeBuildInvertedFile(const std::vector<std::string>&)

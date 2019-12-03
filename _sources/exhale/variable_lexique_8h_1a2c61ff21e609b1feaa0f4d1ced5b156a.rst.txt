@@ -1,0 +1,13 @@
+.. _exhale_variable_lexique_8h_1a2c61ff21e609b1feaa0f4d1ced5b156a:
+
+Variable Document::tagLexStrMap
+===============================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_lexique.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: Document::tagLexStrMap

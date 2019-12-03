@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File Stemmer.cpp &mdash; OT1 - Text Indexing  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OT1 - Text Indexing
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Doxygen C++ Backend Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs_root.html">C++ Backend</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OT1 - Text Indexing</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File Stemmer.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/exhale/program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_Stemmer.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-stemmer-cpp">
+<span id="program-listing-file-mnt-d-programation-c-textindexing-backend-src-stemmer-cpp"></span><h1>Program Listing for File Stemmer.cpp<a class="headerlink" href="#program-listing-for-file-stemmer-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file__mnt_d_Programation_C++_TextIndexing_backend_src_Stemmer.cpp.html#file-mnt-d-programation-c-textindexing-backend-src-stemmer-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">/mnt/d/Programation/C++/TextIndexing/backend/src/Stemmer.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Source : https://tartarus.org/martin/PorterStemmer/c_thread_safe.txt</span>
+
+<span class="cm">/* This is the Porter stemming algorithm, coded up in ANSI C by the</span>
+<span class="cm">author. It may be be regarded as canonical, in that it follows the</span>
+<span class="cm">algorithm presented in</span>
+
+<span class="cm">Porter, 1980, An algorithm for suffix stripping, Program, Vol. 14,</span>
+<span class="cm">no. 3, pp 130-137,</span>
+
+<span class="cm">only differing from it at the points marked --DEPARTURE-- below.</span>
+
+<span class="cm">See also http://www.tartarus.org/~martin/PorterStemmer</span>
+
+<span class="cm">The algorithm as described in the paper could be exactly replicated</span>
+<span class="cm">by adjusting the points of DEPARTURE, but this is barely necessary,</span>
+<span class="cm">because (a) the points of DEPARTURE are definitely improvements, and</span>
+<span class="cm">(b) no encoding of the Porter stemmer I have seen is anything like</span>
+<span class="cm">as exact as this version, even with the points of DEPARTURE!</span>
+
+<span class="cm">You can compile it on Unix with &#39;gcc -O3 -o stem stem.c&#39; after which</span>
+<span class="cm">&#39;stem&#39; takes a list of inputs and sends the stemmed equivalent to</span>
+<span class="cm">stdout.</span>
+
+<span class="cm">The algorithm as encoded here is particularly fast.</span>
+
+<span class="cm">Release 1: the basic non-thread safe version</span>
+<span class="cm">Release 2: the thread-safe version</span>
+<span class="cm">Release 3: 11 Apr 2013, fixes a bug noted by Matt Patenaude</span>
+<span class="cm">Release 4: 25 Mar 2014, fixes a bug noted by Klemens Baum</span>
+<span class="cm">*/</span>
+
+
+<span class="c1">//#include &lt;stdlib.h&gt;  /* for malloc, free */</span>
+<span class="c1">//#include &lt;string.h&gt;  /* for memcmp, memmove */</span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+
+
+<span class="cm">/* stemmer is a structure for a few local bits of data,</span>
+<span class="cm">*/</span>
+
+<span class="k">class</span> <span class="nc">Stemmer</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">stem</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>       <span class="cm">/* buffer for word to be stemmed */</span>
+    <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>          <span class="cm">/* offset to the end of the string */</span>
+    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>          <span class="cm">/* a general offset into the string */</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">cons</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="nf">m</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="nf">vowelinstem</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="nf">doublec</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">cvc</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="nf">ends</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">s</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">setto</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">s</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">r</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">s</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">step1ab</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">step1c</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">step2</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">step3</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">step4</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">step5</span><span class="p">();</span>
+<span class="p">};</span>
+
+
+<span class="cm">/* Member b is a buffer holding a word to be stemmed. The letters are in</span>
+<span class="cm">b[0], b[1] ... ending at b[z-&gt;k]. Member k is readjusted downwards as</span>
+<span class="cm">the stemming progresses. Zero termination is not in fact used in the</span>
+<span class="cm">algorithm.</span>
+
+<span class="cm">Note that only lower case sequences are stemmed. Forcing to lower case</span>
+<span class="cm">should be done before stem(...) is called.</span>
+
+
+<span class="cm">Typical usage is:</span>
+
+<span class="cm">struct stemmer * z = create_stemmer();</span>
+<span class="cm">char b[] = &quot;pencils&quot;;</span>
+<span class="cm">int res = stem(z, b, 6);</span>
+<span class="cm">/- stem the 7 characters of b[0] to b[6]. The result, res,</span>
+<span class="cm">will be 5 (the &#39;s&#39; is removed). -/</span>
+<span class="cm">free_stemmer(z);</span>
+<span class="cm">*/</span>
+
+
+<span class="cm">/* The main part of the stemming algorithm starts here.</span>
+<span class="cm">*/</span>
+
+<span class="cm">/* cons(z, i) is TRUE &lt;=&gt; b[i] is a consonant.</span>
+<span class="cm">*/</span>
+
+<span class="kt">bool</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">cons</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;u&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;y&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nb">true</span> <span class="o">:</span> <span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">default</span><span class="o">:</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* m(z) measures the number of consonant sequences between 0 and j. if c is</span>
+<span class="cm">a consonant sequence and v a vowel sequence, and &lt;..&gt; indicates arbitrary</span>
+<span class="cm">presence,</span>
+
+<span class="cm">&lt;c&gt;&lt;v&gt;       gives 0</span>
+<span class="cm">&lt;c&gt;vc&lt;v&gt;     gives 1</span>
+<span class="cm">&lt;c&gt;vcvc&lt;v&gt;   gives 2</span>
+<span class="cm">&lt;c&gt;vcvcvc&lt;v&gt; gives 3</span>
+<span class="cm">....</span>
+<span class="cm">*/</span>
+
+<span class="kt">int</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">m</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;;)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;;)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(;;)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">n</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(;;)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* vowelinstem(z) is TRUE &lt;=&gt; 0,...j contains a vowel */</span>
+
+<span class="kt">bool</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">vowelinstem</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* doublec(z, j) is TRUE &lt;=&gt; j,(j-1) contain a double consonant. */</span>
+
+<span class="kt">bool</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">doublec</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* cvc(z, i) is TRUE &lt;=&gt; i-2,i-1,i has the form consonant - vowel - consonant</span>
+<span class="cm">and also if the second c is not w,x or y. this is used when trying to</span>
+<span class="cm">restore an e at the end of a short word. e.g.</span>
+
+<span class="cm">cav(e), lov(e), hop(e), crim(e), but</span>
+<span class="cm">snow, box, tray.</span>
+<span class="cm">*/</span>
+
+<span class="kt">bool</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">cvc</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">||</span> <span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">||</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cons</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">{</span>  <span class="kt">int</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;w&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;x&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;y&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* z-&gt;ends(s) is TRUE &lt;=&gt; 0,...k ends with the string s. */</span>
+
+<span class="kt">bool</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">ends</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="o">!=</span> <span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="cm">/* tiny speed-up */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">memcmp</span><span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="n">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="n">length</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* setto(z, s) sets (j+1),...k to the characters in the string s, readjusting</span>
+<span class="cm">k. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">setto</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">memmove</span><span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+    <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">length</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* z-&gt;r(s) is used further down. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">r</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">m</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">setto</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="cm">/* step1ab(z) gets rid of plurals and -ed or -ing. e.g.</span>
+
+<span class="cm">caresses  -&gt;  caress</span>
+<span class="cm">ponies    -&gt;  poni</span>
+<span class="cm">ties      -&gt;  ti</span>
+<span class="cm">caress    -&gt;  caress</span>
+<span class="cm">cats      -&gt;  cat</span>
+
+<span class="cm">feed      -&gt;  feed</span>
+<span class="cm">agreed    -&gt;  agree</span>
+<span class="cm">disabled  -&gt;  disable</span>
+
+<span class="cm">matting   -&gt;  mat</span>
+<span class="cm">mating    -&gt;  mate</span>
+<span class="cm">meeting   -&gt;  meet</span>
+<span class="cm">milling   -&gt;  mill</span>
+<span class="cm">messing   -&gt;  mess</span>
+
+<span class="cm">meetings  -&gt;  meet</span>
+
+<span class="cm">*/</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">step1ab</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;s&#39;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;sses&quot;</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span> <span class="k">else</span>
+            <span class="nf">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ies&quot;</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">setto</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\01</span><span class="s">&quot;</span> <span class="s">&quot;i&quot;</span><span class="p">);</span> <span class="k">else</span>
+                <span class="nf">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;s&#39;</span><span class="p">)</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;eed&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">m</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">--</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">else</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;ed&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ing&quot;</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">vowelinstem</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;at&quot;</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">setto</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ate&quot;</span><span class="p">);</span> <span class="k">else</span>
+                <span class="nf">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;bl&quot;</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">setto</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ble&quot;</span><span class="p">);</span> <span class="k">else</span>
+                    <span class="nf">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;iz&quot;</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">setto</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ize&quot;</span><span class="p">);</span> <span class="k">else</span>
+                        <span class="nf">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">doublec</span><span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">))</span>
+                        <span class="p">{</span>
+                            <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">--</span><span class="p">;</span>
+                            <span class="p">{</span>  <span class="kt">int</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">];</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;l&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;s&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;z&#39;</span><span class="p">)</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">++</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">m</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">cvc</span><span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">setto</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\01</span><span class="s">&quot;</span> <span class="s">&quot;e&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* step1c(z) turns terminal y to i when there is another vowel in the stem. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">step1c</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\01</span><span class="s">&quot;</span> <span class="s">&quot;y&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">vowelinstem</span><span class="p">())</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;i&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="cm">/* step2(z) maps double suffices to single ones. so -ization ( = -ize plus</span>
+<span class="cm">-ation) maps to -ize etc. note that the string before the suffix must give</span>
+<span class="cm">m(z) &gt; 0. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">step2</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\07</span><span class="s">&quot;</span> <span class="s">&quot;ational&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ate&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\06</span><span class="s">&quot;</span> <span class="s">&quot;tional&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;tion&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;c&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;enci&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ence&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;anci&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ance&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;izer&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ize&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;l&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;bli&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ble&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span> <span class="cm">/*-DEPARTURE-*/</span>
+
+                                                                      <span class="cm">/* To match the published algorithm, replace this line with</span>
+<span class="cm">                                                                      case &#39;l&#39;: if (z-&gt;ends(&quot;\04&quot; &quot;abli&quot;)) { z-&gt;r(&quot;\04&quot; &quot;able&quot;); break; } */</span>
+
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;alli&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;al&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;entli&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ent&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;eli&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\01</span><span class="s">&quot;</span> <span class="s">&quot;e&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;ousli&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ous&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\07</span><span class="s">&quot;</span> <span class="s">&quot;ization&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ize&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;ation&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ate&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ator&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ate&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;s&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;alism&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;al&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\07</span><span class="s">&quot;</span> <span class="s">&quot;iveness&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ive&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\07</span><span class="s">&quot;</span> <span class="s">&quot;fulness&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ful&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\07</span><span class="s">&quot;</span> <span class="s">&quot;ousness&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ous&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;t&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;aliti&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;al&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;iviti&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ive&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\06</span><span class="s">&quot;</span> <span class="s">&quot;biliti&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ble&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;g&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;logi&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;log&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span> <span class="cm">/*-DEPARTURE-*/</span>
+
+                                                                       <span class="cm">/* To match the published algorithm, delete this line */</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* step3(z) deals with -ic-, -full, -ness etc. similar strategy to step2. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">step3</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">])</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;icate&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;ic&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;ative&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\00</span><span class="s">&quot;</span> <span class="s">&quot;&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;alize&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;al&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;iciti&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;ic&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;l&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ical&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;ic&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ful&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\00</span><span class="s">&quot;</span> <span class="s">&quot;&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;s&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ness&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">r</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\00</span><span class="s">&quot;</span> <span class="s">&quot;&quot;</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* step4(z) takes off -ant, -ence etc., in context &lt;c&gt;vcvc&lt;v&gt;. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">step4</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;al&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;c&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ance&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ence&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;er&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;ic&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;l&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;able&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ible&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;n&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ant&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\05</span><span class="s">&quot;</span> <span class="s">&quot;ement&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\04</span><span class="s">&quot;</span> <span class="s">&quot;ment&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ent&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ion&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;s&#39;</span> <span class="o">||</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;t&#39;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\02</span><span class="s">&quot;</span> <span class="s">&quot;ou&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+        <span class="cm">/* takes care of -ous */</span>
+    <span class="k">case</span> <span class="sc">&#39;s&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ism&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;t&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ate&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;iti&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;u&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ous&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;v&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ive&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;z&#39;</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">ends</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\03</span><span class="s">&quot;</span> <span class="s">&quot;ize&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span> <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">m</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* step5(z) removes a final -e if m(z) &gt; 1, and changes -ll to -l if</span>
+<span class="cm">m(z) &gt; 1. */</span>
+
+<span class="kt">void</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">step5</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">;</span>
+    <span class="n">z</span><span class="o">-&gt;</span><span class="n">j</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;e&#39;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">m</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">cvc</span><span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;l&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">doublec</span><span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">m</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* In stem(z, b, k), b is a char pointer, and the string to be stemmed is</span>
+<span class="cm">from b[0] to b[k] inclusive.  Possibly b[k+1] == &#39;\0&#39;, but it is not</span>
+<span class="cm">important. The stemmer adjusts the characters b[0] ... b[k] and returns</span>
+<span class="cm">the new end-point of the string, k&#39;. Stemming never increases word</span>
+<span class="cm">length, so 0 &lt;= k&#39; &lt;= k.</span>
+<span class="cm">*/</span>
+
+<span class="kt">int</span> <span class="n">Stemmer</span><span class="o">::</span><span class="n">stem</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Stemmer</span><span class="o">*</span> <span class="k">const</span> <span class="n">z</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">k</span><span class="p">;</span> <span class="cm">/*-DEPARTURE-*/</span>
+    <span class="n">z</span><span class="o">-&gt;</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span> <span class="cm">/* copy the parameters into z */</span>
+
+                        <span class="cm">/* With this line, strings of length 1 or 2 don&#39;t go through the</span>
+<span class="cm">                        stemming process, although no mention is made of this in the</span>
+<span class="cm">                        published algorithm. Remove the line to match the published</span>
+<span class="cm">                        algorithm. */</span>
+
+    <span class="n">z</span><span class="o">-&gt;</span><span class="n">step1ab</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">z</span><span class="o">-&gt;</span><span class="n">step1c</span><span class="p">();</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">step2</span><span class="p">();</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">step3</span><span class="p">();</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">step4</span><span class="p">();</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">step5</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">z</span><span class="o">-&gt;</span><span class="n">k</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*--------------------stemmer definition ends here------------------------*/</span>
+
+<span class="c1">//#include &lt;stdio.h&gt;</span>
+<span class="c1">//#include &lt;ctype.h&gt;       // for isupper, islower, tolower //</span>
+<span class="cm">/*</span>
+<span class="cm">#define INC 50           // size units in which s is increased //</span>
+
+<span class="cm">#define LETTER(ch) (isupper(ch) || islower(ch))</span>
+
+<span class="cm">template &lt;typename type&gt;</span>
+<span class="cm">type* realloc(type* ptr, size_t oldsize, size_t newsize)</span>
+<span class="cm">{</span>
+<span class="cm">    type* newptr = new type[newsize];</span>
+<span class="cm">    std::memcpy(newptr, ptr, oldsize &lt; newsize ? oldsize : newsize);</span>
+<span class="cm">    delete[] ptr;</span>
+<span class="cm">    return newptr;</span>
+<span class="cm">}</span>
+
+<span class="cm">void stemfile(Stemmer * z, FILE * f)</span>
+<span class="cm">{</span>
+<span class="cm">    char * s;         // buffer for words to be stemmed //</span>
+<span class="cm">    int i_max = INC;  // maximum offset in s //</span>
+
+<span class="cm">    s = new char[i_max + 1];</span>
+
+<span class="cm">    for (;;)</span>
+<span class="cm">    {</span>
+<span class="cm">        int ch = getc(f);</span>
+<span class="cm">        if (ch == EOF) return;</span>
+<span class="cm">        if (LETTER(ch))</span>
+<span class="cm">        {</span>
+<span class="cm">            int i = 0;</span>
+<span class="cm">            for (;;)</span>
+<span class="cm">            {</span>
+<span class="cm">                if (i == i_max)</span>
+<span class="cm">                {</span>
+<span class="cm">                    s = realloc(s, i_max, i_max + INC + 1);</span>
+<span class="cm">                    i_max += INC;</span>
+<span class="cm">                }</span>
+<span class="cm">                ch = tolower(ch); // forces lower case //</span>
+
+<span class="cm">                s[i] = ch; i++;</span>
+<span class="cm">                ch = getc(f);</span>
+<span class="cm">                if (!LETTER(ch)) { ungetc(ch, f); break; }</span>
+<span class="cm">            }</span>
+<span class="cm">            s[z-&gt;stem(s, i - 1) + 1] = 0;</span>
+<span class="cm">            // the previous line calls the stemmer and //</span>
+<span class="cm">            // uses its result to zero-terminate the string in s //</span>
+<span class="cm">            printf(&quot;%s&quot;, s);</span>
+<span class="cm">        }</span>
+<span class="cm">        else putchar(ch);</span>
+<span class="cm">    }</span>
+
+<span class="cm">    delete[] s;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+<span class="cm">/*</span>
+<span class="cm">int main(int argc, char * argv[])</span>
+<span class="cm">{</span>
+<span class="cm">    int i;</span>
+
+<span class="cm">    Stemmer z;</span>
+
+<span class="cm">    for (i = 1; i &lt; argc; i++)</span>
+<span class="cm">    {</span>
+<span class="cm">        FILE * f = fopen(argv[i], &quot;r&quot;);</span>
+<span class="cm">        if (f == 0) { fprintf(stderr, &quot;File %s not found\n&quot;, argv[i]); exit(1); }</span>
+<span class="cm">        stemfile(&amp;z, f);</span>
+<span class="cm">    }</span>
+
+<span class="cm">    return 0;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+
+<span class="kt">void</span> <span class="n">stem</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">word</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">strlen</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Stemmer</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">word</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Quentin Guye, Nathan Mesnard, Paul-Emmanuel Sotir, Tianjian Ye
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

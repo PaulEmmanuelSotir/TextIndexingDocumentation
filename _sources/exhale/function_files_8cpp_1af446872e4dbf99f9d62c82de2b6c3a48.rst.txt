@@ -1,0 +1,13 @@
+.. _exhale_function_files_8cpp_1af446872e4dbf99f9d62c82de2b6c3a48:
+
+Function binRead< unsigned_ints >
+=================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_files.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: binRead< unsigned_ints >(std::istream&, unsigned_ints&)

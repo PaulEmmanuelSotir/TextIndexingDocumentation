@@ -1,0 +1,13 @@
+.. _exhale_function_InvertedFile_8h_1a2f6a036ae066f18b01817d62d7e1293d:
+
+Function IFImport(InvertedFile_t&, const std::string&)
+======================================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_InvertedFile.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: IFImport(InvertedFile_t&, const std::string&)

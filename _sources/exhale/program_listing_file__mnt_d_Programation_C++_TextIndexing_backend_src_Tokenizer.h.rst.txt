@@ -1,0 +1,71 @@
+
+.. _program_listing_file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.h:
+
+Program Listing for File Tokenizer.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__mnt_d_Programation_C++_TextIndexing_backend_src_Tokenizer.h>` (``/mnt/d/Programation/C++/TextIndexing/backend/src/Tokenizer.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   
+   #include <string>
+   #include <sstream>
+   
+   #include "utility.h"
+   
+   class PreprocessorTagsData
+   {
+   public:
+       std::string separateTagsData(std::istream& is);
+   
+   private:
+       enum class status_t { data, tag, eof } status = status_t::data;
+   };
+   
+   struct Token_t {
+       
+       enum TokenType_t {
+           SEPARATOR,
+           LITERAL,
+           NUMBER,
+           MONEY,
+           PERCENTAGE,
+       };
+       
+       std::string word;
+       double value;
+       TokenType_t type;
+       
+       Token_t(const std::string& word, TokenType_t type)
+           : word(word), type(type)
+       {}
+   
+       Token_t(const std::string& number, double value, TokenType_t type)
+           : word(number), value(value), type(type)
+       {}
+   
+   };
+   
+   class Tokenizer
+   {
+   public:
+       Tokenizer();
+   
+       Token_t extractToken(std::istream & is);
+   
+       bool extract(const string_view& data, string_view& result);
+   
+       bool isNextTokenASeparator(std::istream& is, std::string& separator);
+   
+   private:
+       bool isCharValidText[256] = {};
+       bool isCharValidToken[256] = {};
+       const std::array<std::string, 17> separators {". "s, "; "s, ", "s, "-"s, ":"s, "?"s, "!"s, "("s, ")"s, "["s, "]"s, "\""s, "'"s, ":"s, " "s, "\n"s, "\t"s};
+   
+       void initializeLUTs();
+   };

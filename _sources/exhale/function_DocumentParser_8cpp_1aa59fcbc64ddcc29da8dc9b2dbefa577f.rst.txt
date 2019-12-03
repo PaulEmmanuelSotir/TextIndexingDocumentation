@@ -1,0 +1,13 @@
+.. _exhale_function_DocumentParser_8cpp_1aa59fcbc64ddcc29da8dc9b2dbefa577f:
+
+Function operator<<(std::ostream&, const DocumentJSON_t&)
+=========================================================
+
+- Defined in :ref:`file__mnt_d_Programation_C++_TextIndexing_backend_src_DocumentParser.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: operator<<(std::ostream&, const DocumentJSON_t&)
